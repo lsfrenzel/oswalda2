@@ -212,7 +212,7 @@ TRANSLATIONS = {
         'portfolio_stat1_label': 'Events Completed',
         'portfolio_stat2_label': 'Years of Experience',
         'portfolio_stat3_label': 'Cities Served',
-        'portfolio_stat4_label': 'Customer Satisfaction'
+        'portfolio_stat4_label': 'Customer Satisfaction',
         'portfolio_project1_title': 'Le Cirque Est Roi',
     'portfolio_project1_desc': '2023 Tour',
     'portfolio_project2_title': 'Humberto Flying Circus',
