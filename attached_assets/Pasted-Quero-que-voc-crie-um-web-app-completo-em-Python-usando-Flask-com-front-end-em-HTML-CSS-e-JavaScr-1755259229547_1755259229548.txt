@@ -1,0 +1,97 @@
+<<<<<<< HEAD
+Quero que você crie um web app completo em Python usando Flask, com front-end em HTML, CSS e JavaScript, para uma empresa chamada "Oswalda Produções & Eventos".  
+O objetivo do app é gerar leads e conquistar clientes que buscam qualidade e segurança nos serviços de logística e gerenciamento para circos.
+
+Referências de design e estrutura:
+- https://sarasotaboxoffice.com/
+- https://kevaworks.com/
+
+Requisitos de design:
+- Estética moderna e profissional.
+- Paleta de cores: azul, vermelho, branco e amarelo (em tons vivos, mas equilibrados).
+- Layout responsivo (desktop e mobile).
+- Tipografia clara e legível.
+- Destaque visual para a proposta de qualidade e segurança.
+- Imagens e vídeos de alta qualidade de eventos circenses e bastidores.
+- Animações leves e transições suaves.
+
+Funcionalidades e estrutura:
+1. Página inicial com:
+   - **Hero section** com vídeo widescreen em autoplay, sem controles visíveis, com texto e botão de chamada para ação sobreposto.
+   - Botão de solicitação de orçamento em destaque.
+2. Menu com as páginas: Home, Sobre, Serviços, Portfólio e Contato.
+3. Página "Serviços" detalhando a logística e gerenciamento de circos.
+4. Página "Sobre" contando a história e valores da empresa.
+5. Página "Portfólio" com galeria de fotos e vídeos de eventos já realizados.
+6. Página "Contato" com:
+   - Formulário de contato (Nome, Email, Telefone, Mensagem).
+   - Armazenamento dos dados no banco de dados SQLite.
+   - Envio automático de e-mail (usar Flask-Mail ou similar).
+7. Botão flutuante de WhatsApp sempre visível no canto inferior direito, facilitando contato rápido.
+8. Rodapé com redes sociais e informações de contato.
+
+**Suporte a idiomas:**
+- Opções de idioma no canto superior direito: Português (padrão), Inglês e Francês.
+- Todo o conteúdo deve mudar dinamicamente de acordo com o idioma selecionado (pode ser implementado via dicionário de traduções em Python ou arquivos JSON separados).
+- O idioma padrão deve ser o Português.
+
+Tecnologias e implementação:
+- Backend: Python + Flask.
+- Frontend: HTML5, CSS3 e JavaScript puro (ou Bootstrap para responsividade).
+- Banco de dados: SQLite para armazenar os leads do formulário.
+- Organização do código com templates Jinja2.
+- Comentários explicativos no código para fácil manutenção.
+
+Objetivo final:
+- Criar um web app funcional, esteticamente agradável e pronto para rodar no Replit.
+- Focar em conversão de visitantes em leads.
+- Transmitir profissionalismo e luxo, reforçando a qualidade e segurança da empresa.
+=======
+Quero que você crie um web app completo em Python usando Flask, com front-end em HTML, CSS e JavaScript, para uma empresa chamada "Oswalda Produções & Eventos".  
+O objetivo do app é gerar leads e conquistar clientes que buscam qualidade e segurança nos serviços de logística e gerenciamento para circos.
+
+Referências de design e estrutura:
+- https://sarasotaboxoffice.com/
+- https://kevaworks.com/
+
+Requisitos de design:
+- Estética moderna e profissional.
+- Paleta de cores: azul, vermelho, branco e amarelo (em tons vivos, mas equilibrados).
+- Layout responsivo (desktop e mobile).
+- Tipografia clara e legível.
+- Destaque visual para a proposta de qualidade e segurança.
+- Imagens e vídeos de alta qualidade de eventos circenses e bastidores.
+- Animações leves e transições suaves.
+
+Funcionalidades e estrutura:
+1. Página inicial com:
+   - **Hero section** com vídeo widescreen em autoplay, sem controles visíveis, com texto e botão de chamada para ação sobreposto.
+   - Botão de solicitação de orçamento em destaque.
+2. Menu com as páginas: Home, Sobre, Serviços, Portfólio e Contato.
+3. Página "Serviços" detalhando a logística e gerenciamento de circos.
+4. Página "Sobre" contando a história e valores da empresa.
+5. Página "Portfólio" com galeria de fotos e vídeos de eventos já realizados.
+6. Página "Contato" com:
+   - Formulário de contato (Nome, Email, Telefone, Mensagem).
+   - Armazenamento dos dados no banco de dados SQLite.
+   - Envio automático de e-mail (usar Flask-Mail ou similar).
+7. Botão flutuante de WhatsApp sempre visível no canto inferior direito, facilitando contato rápido.
+8. Rodapé com redes sociais e informações de contato.
+
+**Suporte a idiomas:**
+- Opções de idioma no canto superior direito: Português (padrão), Inglês e Francês.
+- Todo o conteúdo deve mudar dinamicamente de acordo com o idioma selecionado (pode ser implementado via dicionário de traduções em Python ou arquivos JSON separados).
+- O idioma padrão deve ser o Português.
+
+Tecnologias e implementação:
+- Backend: Python + Flask.
+- Frontend: HTML5, CSS3 e JavaScript puro (ou Bootstrap para responsividade).
+- Banco de dados: SQLite para armazenar os leads do formulário.
+- Organização do código com templates Jinja2.
+- Comentários explicativos no código para fácil manutenção.
+
+Objetivo final:
+- Criar um web app funcional, esteticamente agradável e pronto para rodar no Replit.
+- Focar em conversão de visitantes em leads.
+- Transmitir profissionalismo e luxo, reforçando a qualidade e segurança da empresa.
+>>>>>>> 7ddfb69 (Primeiro commit do projeto)

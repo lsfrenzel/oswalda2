@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('nav_contact') }}{% endblock %}
+
+{% block content %}
+<div class="page-hero bg-success text-white py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3">{{ t('contact_title') }}</h1>
+                <p class="lead">{{ t('contact_subtitle') }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="bg-white rounded shadow p-4 p-lg-5 slide-in-left">
+                    <form method="POST" class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">{{ t('contact_name') }}</label>
+                                <input type="text" class="form-control form-control-lg" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">{{ t('contact_email') }}</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="phone" class="form-label">{{ t('contact_phone') }}</label>
+                                <input type="tel" class="form-control form-control-lg" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="message" class="form-label">{{ t('contact_message') }}</label>
+                                <textarea class="form-control form-control-lg" id="message" name="message" rows="6" required placeholder="{{ t('contact_placeholder') }}"></textarea>
+                            </div>
+                            
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="fas fa-paper-plane me-2"></i>{{ t('contact_send') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="contact-info slide-in-right">
+                    <h4 class="fw-bold mb-4">{{ t('contact_info_title') }}</h4>
+                    
+                    <div class="contact-item d-flex align-items-start mb-4">
+                        <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">{{ t('contact_email_label') }}</h6>
+                            <p class="text-muted mb-0">{{ t('footer_email') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item d-flex align-items-start mb-4">
+                        <div class="contact-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">{{ t('contact_phone_label') }}</h6>
+                            <p class="text-muted mb-0">{{ t('footer_phone') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item d-flex align-items-start mb-4">
+                        <div class="contact-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">{{ t('contact_whatsapp_label') }}</h6>
+                            <a href="https://wa.me/5511999999999?text={{ t('whatsapp_message') | urlencode }}" class="text-decoration-none" target="_blank">
+                                {{ t('contact_whatsapp_action') }}
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item d-flex align-items-start">
+                        <div class="contact-icon bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">{{ t('contact_hours_label') }}</h6>
+                            <p class="text-muted mb-1">{{ t('contact_hours_weekdays') }}</p>
+                            <p class="text-muted mb-0">{{ t('contact_hours_saturday') }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+<<<<<<< HEAD
+                <!-- Social Media -->
+                <div class="mt-5">
+                    <h5 class="fw-bold mb-3">{{ t('footer_follow') }}</h5>
+                    <div class="social-links-contact">
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                            <i class="fab fa-facebook me-1"></i>Facebook
+                        </a>
+                        <a href="#" class="btn btn-outline-danger me-2 mb-2">
+                            <i class="fab fa-instagram me-1"></i>Instagram
+                        </a>
+                        <a href="#" class="btn btn-outline-info me-2 mb-2">
+                            <i class="fab fa-linkedin me-1"></i>LinkedIn
+                        </a>
+                    </div>
+                </div>
+=======
+>>>>>>> 7ddfb69 (Primeiro commit do projeto)
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
