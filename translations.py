@@ -22,6 +22,9 @@ TRANSLATIONS = {
         'about_subtitle': 'Excelência em Logística Circense',
         'about_text1': 'Com anos de experiência no mercado de entretenimento, a Oswalda Produções & Eventos se especializou em oferecer soluções completas de logística e gerenciamento para circos e espetáculos itinerantes.',
         'about_text2': 'Nossa equipe altamente qualificada garante que cada evento seja executado com a máxima segurança, eficiência e profissionalismo, proporcionando experiências inesquecíveis para o público.',
+        'about_text3': 'Fundada com o objetivo de revolucionar a logística circense, a Oswalda Produções nasceu da paixão pelo mundo do entretenimento e da necessidade de profissionalizar os serviços de apoio aos espetáculos itinerantes.',
+        'about_text4': 'Nossa trajetória começou com pequenos eventos locais e cresceu através da dedicação em sempre superar as expectativas de nossos clientes, construindo relacionamentos duradouros baseados na confiança e na excelência operacional.',
+        'about_text5': 'Hoje, somos reconhecidos como referência no mercado, atendendo desde pequenas companhias até grandes produções internacionais, sempre mantendo nosso compromisso com a segurança, qualidade e inovação.',
         'about_mission': 'Nossa Missão',
         'about_mission_text': 'Proporcionar soluções logísticas inovadoras e seguras para o mundo circense, garantindo que cada apresentação seja um sucesso absoluto.',
         
@@ -152,6 +155,9 @@ TRANSLATIONS = {
         'about_subtitle': 'Excellence in Circus Logistics',
         'about_text1': 'With years of experience in the entertainment market, Oswalda Productions & Events specializes in providing complete logistics and management solutions for circuses and traveling shows.',
         'about_text2': 'Our highly qualified team ensures that each event is executed with maximum safety, efficiency and professionalism, providing unforgettable experiences for the audience.',
+        'about_text3': 'Founded with the goal of revolutionizing circus logistics, Oswalda Productions was born from a passion for the entertainment world and the need to professionalize support services for traveling shows.',
+        'about_text4': 'Our journey began with small local events and grew through dedication to always exceed our clients\' expectations, building lasting relationships based on trust and operational excellence.',
+        'about_text5': 'Today, we are recognized as a market reference, serving from small companies to large international productions, always maintaining our commitment to safety, quality and innovation.',
         'about_mission': 'Our Mission',
         'about_mission_text': 'To provide innovative and safe logistics solutions for the circus world, ensuring that each performance is an absolute success.',
         
@@ -270,6 +276,9 @@ TRANSLATIONS = {
         'about_subtitle': 'Excellence en Logistique de Cirque',
         'about_text1': 'Avec des années d\'expérience sur le marché du divertissement, Oswalda Productions & Events se spécialise dans la fourniture de solutions complètes de logistique et de gestion pour les cirques et spectacles itinérants.',
         'about_text2': 'Notre équipe hautement qualifiée garantit que chaque événement soit exécuté avec un maximum de sécurité, d\'efficacité et de professionnalisme, offrant des expériences inoubliables au public.',
+        'about_text3': 'Fondée dans le but de révolutionner la logistique circassienne, Oswalda Productions est née de la passion pour le monde du divertissement et du besoin de professionnaliser les services de soutien aux spectacles itinérants.',
+        'about_text4': 'Notre parcours a commencé avec de petits événements locaux et a grandi grâce au dévouement à toujours dépasser les attentes de nos clients, en construisant des relations durables basées sur la confiance et l\'excellence opérationnelle.',
+        'about_text5': 'Aujourd\'hui, nous sommes reconnus comme une référence sur le marché, servant des petites compagnies aux grandes productions internationales, en maintenant toujours notre engagement envers la sécurité, la qualité et l\'innovation.',
         'about_mission': 'Notre Mission',
         'about_mission_text': 'Fournir des solutions logistiques innovantes et sûres pour le monde du cirque, en garantissant que chaque représentation soit un succès absolu.',
         
