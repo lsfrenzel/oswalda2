@@ -1,16 +1,11 @@
 import os
 import logging
-
-# Importa rotas
-import routes  # certifique-se que routes.py está na mesma pasta
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
 from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-app = Flask(__name__)
 # Configure logging for debugging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -49,5 +44,5 @@ with app.app_context():
     import models  # noqa: F401
     db.create_all()
 
-# Import routes
+# Import routes after app is configured to avoid circular imports
 import routes  # noqa: F401

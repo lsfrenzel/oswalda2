@@ -5,13 +5,6 @@ from models import Lead
 from translations import get_translation
 import logging
 
-from app import app
-from flask import render_template
-@app.route("/")
-def index():
-    return "Hello, Railway!"
-
-
 @app.context_processor
 def inject_translation():
     """Make translation function available in all templates"""

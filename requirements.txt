@@ -1,3 +1,11 @@
 Flask==2.3.3
 gunicorn==21.2.0
 # Adicione outras libs que seu projeto usa
+email_validator
+flask
+flask-mail
+flask-sqlalchemy
+gunicorn
+psycopg2-binary
+sqlalchemy
+werkzeug
