@@ -56,11 +56,8 @@ TRANSLATIONS = {
         # Footer
         'footer_contact': 'Contato',
         'footer_email': 'contato@oswaldaproducoes.com',
-<<<<<<< HEAD
         'footer_phone': '+55 (11) 9999-9999',
-=======
         'footer_phone': '+1 (514) 793-8651',
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
         'footer_follow': 'Siga-nos',
         'footer_rights': 'Todos os direitos reservados.',
         
@@ -88,7 +85,6 @@ TRANSLATIONS = {
         'contact_placeholder': 'Conte-nos sobre seu projeto, suas necessidades específicas e como podemos ajudá-lo...',
         
         # Portfolio Page - Additional
-<<<<<<< HEAD
         'portfolio_project1_title': 'Grande Circo Nacional',
         'portfolio_project1_desc': 'Turnê 2023 - 50 cidades',
         'portfolio_project2_title': 'Circo Voador',
@@ -101,7 +97,6 @@ TRANSLATIONS = {
         'portfolio_project5_desc': 'Alta tecnologia',
         'portfolio_project6_title': 'Grande Show',
         'portfolio_project6_desc': 'Evento corporativo',
-=======
         'portfolio_project1_title': 'Le Cirque Est Roi',
         'portfolio_project1_desc': 'Turnê 2023',
         'portfolio_project2_title': 'Humberto Circo Voador',
@@ -114,7 +109,6 @@ TRANSLATIONS = {
         'portfolio_project5_desc': 'Suporte Especializado',
         'portfolio_project6_title': 'Ryb Grande Show',
         'portfolio_project6_desc': 'Grandes Eventos',
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
         'portfolio_stat1_label': 'Eventos Realizados',
         'portfolio_stat2_label': 'Anos de Experiência',
         'portfolio_stat3_label': 'Cidades Atendidas',
@@ -174,11 +168,8 @@ TRANSLATIONS = {
         # Footer
         'footer_contact': 'Contact',
         'footer_email': 'contact@oswaldaproductions.com',
-<<<<<<< HEAD
         'footer_phone': '+55 (11) 9999-9999',
-=======
         'footer_phone': '+1 (514) 793-8651',
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
         'footer_follow': 'Follow us',
         'footer_rights': 'All rights reserved.',
         
@@ -206,7 +197,6 @@ TRANSLATIONS = {
         'contact_placeholder': 'Tell us about your project, your specific needs and how we can help you...',
         
         # Portfolio Page - Additional
-<<<<<<< HEAD
         'portfolio_project1_title': 'Great National Circus',
         'portfolio_project1_desc': '2023 Tour - 50 cities',
         'portfolio_project2_title': 'Flying Circus',
@@ -223,7 +213,6 @@ TRANSLATIONS = {
         'portfolio_stat2_label': 'Years of Experience',
         'portfolio_stat3_label': 'Cities Served',
         'portfolio_stat4_label': 'Customer Satisfaction'
-=======
         'portfolio_project1_title': 'Le Cirque Est Roi',
     'portfolio_project1_desc': '2023 Tour',
     'portfolio_project2_title': 'Humberto Flying Circus',
@@ -240,7 +229,6 @@ TRANSLATIONS = {
     'portfolio_stat2_label': 'Years of Experience',
     'portfolio_stat3_label': 'Cities Served',
     'portfolio_stat4_label': 'Customer Satisfaction'
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
     },
     
     'fr': {
@@ -296,11 +284,8 @@ TRANSLATIONS = {
         # Footer
         'footer_contact': 'Contact',
         'footer_email': 'contact@oswaldaproductions.com',
-<<<<<<< HEAD
         'footer_phone': '+55 (11) 9999-9999',
-=======
         'footer_phone': '+1 (514) 793-8651',
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
         'footer_follow': 'Suivez-nous',
         'footer_rights': 'Tous droits réservés.',
         
@@ -328,7 +313,6 @@ TRANSLATIONS = {
         'contact_placeholder': 'Parlez-nous de votre projet, de vos besoins spécifiques et de la façon dont nous pouvons vous aider...',
         
         # Portfolio Page - Additional
-<<<<<<< HEAD
         'portfolio_project1_title': 'Grand Cirque National',
         'portfolio_project1_desc': 'Tournée 2023 - 50 villes',
         'portfolio_project2_title': 'Cirque Volant',
@@ -345,7 +329,6 @@ TRANSLATIONS = {
         'portfolio_stat2_label': 'Années d\'Expérience',
         'portfolio_stat3_label': 'Villes Desservies',
         'portfolio_stat4_label': 'Satisfaction Client'
-=======
         'portfolio_project1_title': 'Le Cirque Est Roi',
     'portfolio_project1_desc': 'Tournée 2023',
     'portfolio_project2_title': 'Humberto Cirque Volant',
@@ -362,7 +345,6 @@ TRANSLATIONS = {
     'portfolio_stat2_label': 'Années d’Expérience',
     'portfolio_stat3_label': 'Villes Desservies',
     'portfolio_stat4_label': 'Satisfaction Client'
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
     }
 }
 
