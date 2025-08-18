@@ -185,18 +185,31 @@ body {
     border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
-<<<<<<< HEAD
-=======
-.service-detail-card img {
-  width: 100%;          /* sempre ocupa a largura do container */
-  height: 250px;        /* define altura fixa (ajuste como preferir) */
-  object-fit: cover;    /* mantém proporção e corta o excesso */
-  border-radius: 10px;  /* mantém o arredondado */
+/* Service detail cards styling */
+.service-detail-card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.service-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
 
+.service-detail-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
 
->>>>>>> 7ddfb69 (Primeiro commit do projeto)
+.service-detail-card:hover img {
+  transform: scale(1.05);
+}
 .service-card::before {
     content: '';
     position: absolute;
