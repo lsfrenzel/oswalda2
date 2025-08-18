@@ -112,7 +112,13 @@ TRANSLATIONS = {
         'portfolio_stat1_label': 'Eventos Realizados',
         'portfolio_stat2_label': 'Anos de Experiência',
         'portfolio_stat3_label': 'Cidades Atendidas',
-        'portfolio_stat4_label': 'Satisfação do Cliente'
+        'portfolio_stat4_label': 'Satisfação do Cliente',
+        
+        # Call to Action sections
+        'cta_ready_title': 'Pronto para transformar seu evento em um sucesso?',
+        'cta_ready_subtitle': 'Entre em contato conosco e descubra como podemos tornar seu circo ainda mais especial.',
+        'cta_project_title': 'Pronto para começar seu projeto?',
+        'cta_project_subtitle': 'Entre em contato conosco para discutir suas necessidades específicas e receber um orçamento personalizado.'
     },
     
     'en': {
@@ -213,22 +219,12 @@ TRANSLATIONS = {
         'portfolio_stat2_label': 'Years of Experience',
         'portfolio_stat3_label': 'Cities Served',
         'portfolio_stat4_label': 'Customer Satisfaction',
-        'portfolio_project1_title': 'Le Cirque Est Roi',
-    'portfolio_project1_desc': '2023 Tour',
-    'portfolio_project2_title': 'Humberto Flying Circus',
-    'portfolio_project2_desc': 'Winter Festival 2022',
-    'portfolio_project3_title': 'Cirque King',
-    'portfolio_project3_desc': 'International Show',
-    'portfolio_project4_title': 'Cirque Eleganté',
-    'portfolio_project4_desc': 'Full Logistics',
-    'portfolio_project5_title': 'Dream Circus',
-    'portfolio_project5_desc': 'Specialized Support',
-    'portfolio_project6_title': 'Ryb Grand Show',
-    'portfolio_project6_desc': 'Major Events',
-    'portfolio_stat1_label': 'Events Held',
-    'portfolio_stat2_label': 'Years of Experience',
-    'portfolio_stat3_label': 'Cities Served',
-    'portfolio_stat4_label': 'Customer Satisfaction'
+        
+        # Call to Action sections
+        'cta_ready_title': 'Ready to transform your event into a success?',
+        'cta_ready_subtitle': 'Contact us and discover how we can make your circus even more special.',
+        'cta_project_title': 'Ready to start your project?',
+        'cta_project_subtitle': 'Contact us to discuss your specific needs and receive a personalized quote.'
     },
     
     'fr': {
@@ -344,7 +340,13 @@ TRANSLATIONS = {
     'portfolio_stat1_label': 'Événements Réalisés',
     'portfolio_stat2_label': 'Années d’Expérience',
     'portfolio_stat3_label': 'Villes Desservies',
-    'portfolio_stat4_label': 'Satisfaction Client'
+    'portfolio_stat4_label': 'Satisfaction Client',
+    
+    # Call to Action sections
+    'cta_ready_title': 'Prêt à transformer votre événement en succès?',
+    'cta_ready_subtitle': 'Contactez-nous et découvrez comment nous pouvons rendre votre cirque encore plus spécial.',
+    'cta_project_title': 'Prêt à commencer votre projet?',
+    'cta_project_subtitle': 'Contactez-nous pour discuter de vos besoins spécifiques et recevoir un devis personnalisé.'
     }
 }
 
