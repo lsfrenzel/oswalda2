@@ -117,22 +117,13 @@
                 </div>
                 
                 <div class="col-lg-4 mb-4">
-                    <h6 class="text-uppercase mb-3">{{ t('footer_follow') }}</h6>
-                    <div class="social-links">
-  <a href="https://www.facebook.com/p/Mundo-%C3%A0-Parte-Unidade-Vila-Mariana-61551078609647/" 
-     class="text-light me-3" 
-     target="_blank" 
-     rel="noopener noreferrer">
-    <i class="fab fa-facebook fa-2x"></i>
-  </a>
-
-  <a href="https://www.instagram.com/mundoaparte.vilamariana/" 
-     class="text-light me-3" 
-     target="_blank" 
-     rel="noopener noreferrer">
-    <i class="fab fa-instagram fa-2x"></i>
-  </a>
-</div>
+                    <h6 class="text-uppercase mb-3">{{ t('nav_services') }}</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('services') }}" class="text-light text-decoration-none">{{ t('service1_title') }}</a></li>
+                        <li><a href="{{ url_for('services') }}" class="text-light text-decoration-none">{{ t('service2_title') }}</a></li>
+                        <li><a href="{{ url_for('services') }}" class="text-light text-decoration-none">{{ t('service3_title') }}</a></li>
+                        <li><a href="{{ url_for('services') }}" class="text-light text-decoration-none">{{ t('service4_title') }}</a></li>
+                    </ul>
                 </div>
             </div>
             

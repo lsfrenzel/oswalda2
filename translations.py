@@ -175,11 +175,11 @@ TRANSLATIONS = {
         # About Page
         'about_title': 'About Oswalda Productions',
         'about_subtitle': 'Excellence in Circus Logistics',
-        'about_text1': 'With years of experience in the entertainment market, Oswalda Productions & Events specializes in providing complete logistics and management solutions for circuses and traveling shows.',
-        'about_text2': 'Our highly qualified team ensures that each event is executed with maximum safety, efficiency and professionalism, providing unforgettable experiences for the audience.',
-        'about_text3': 'Founded with the goal of revolutionizing circus logistics, Oswalda Productions was born from a passion for the entertainment world and the need to professionalize support services for traveling shows.',
-        'about_text4': 'Our journey began with small local events and grew through dedication to always exceed our clients\' expectations, building lasting relationships based on trust and operational excellence.',
-        'about_text5': 'Today, we are recognized as a market reference, serving from small companies to large international productions, always maintaining our commitment to safety, quality and innovation.',
+        'about_text1': 'With over 40 years of experience in the entertainment industry, Louis Leonard founded Oswalda P&E, specializing in providing complete solutions in event management, reservations, and logistical coordination for circuses and traveling shows.',
+        'about_text2': 'Our highly qualified team ensures that each event is executed with maximum efficiency and professionalism, providing unforgettable experiences for the audience.',
+        'about_text3': 'Oswalda Productions was born out of a passion for the world of entertainment and the need to professionalize support services for traveling shows.',
+        'about_text4': 'We are recognized as a reference in the North American/European market, serving small companies to large international productions, always maintaining our commitment to excellence, quality, and innovation.',
+        'about_text5': 'Our mission is to expand our horizons to Latin America, bringing our experience and dedication, ensuring that each performance is an absolute success.',
         'about_mission': 'Our Mission',
         'about_mission_text': 'To provide innovative and safe logistics solutions for the circus world, ensuring that each performance is an absolute success.',
         

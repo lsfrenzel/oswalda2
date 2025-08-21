@@ -53,3 +53,13 @@ Preferred communication style: Simple, everyday language.
 - **Image Assets**: Pixabay integration for high-quality circus and event photography
 - **SMTP Email Service**: Gmail SMTP (configurable) for automated email notifications
 - **SQLite Database**: File-based database for development (production-ready with environment configuration)
+
+## Recent Updates (August 21, 2025)
+
+- **Hero Section Redesign**: Updated hero messaging to "Coordenação e Gestão de Eventos Premium" with multilingual support, replaced hero video with new client-provided video
+- **Company Rebranding**: Updated experience from 15 to 40+ years, repositioned as Louis Leonard's company with North American/European market focus expanding to Latin America
+- **Navigation Enhancement**: Renamed "Portfólio" to "Nossos Clientes", added new "Nosso Time" (Our Team) page with complete translations
+- **Contact Information**: Updated primary email to louis.leonard1313@gmail.com across all pages and languages
+- **Content Updates**: Completely rewrote "Nossa História" section emphasizing Louis Leonard's 40+ years experience and company's market positioning
+- **UI Improvements**: Removed social media buttons from footer, replaced with services navigation links for better user experience
+- **Asset Management**: Successfully integrated new hero video, maintained responsive design and performance optimization
