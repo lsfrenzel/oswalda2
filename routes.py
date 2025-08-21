@@ -45,6 +45,11 @@ def portfolio():
     """Portfolio page"""
     return render_template('portfolio.html')
 
+@app.route('/team')
+def team():
+    """Team page"""
+    return render_template('team.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     """Contact page with form handling"""

@@ -8,23 +8,24 @@ TRANSLATIONS = {
         'nav_home': 'Início',
         'nav_about': 'Sobre',
         'nav_services': 'Serviços',
-        'nav_portfolio': 'Portfólio',
+        'nav_portfolio': 'Nossos Clientes',
         'nav_contact': 'Contato',
+        'nav_team': 'Nosso Time',
         'nav_quote': 'Solicitar Orçamento',
         
         # Hero Section
-        'hero_title': 'Logística Premium para Circos',
-        'hero_subtitle': 'Qualidade, Segurança e Excelência em Gerenciamento de Eventos Circenses',
+        'hero_title': 'Coordenação e Gestão de Eventos Premium',
+        'hero_subtitle': 'Especializada em Gestão de Eventos Circenses de Qualidade',
         'hero_cta': 'Solicitar Orçamento',
         
         # About Page
         'about_title': 'Sobre a Oswalda Produções',
         'about_subtitle': 'Excelência em Logística Circense',
-        'about_text1': 'Com anos de experiência no mercado de entretenimento, a Oswalda Produções & Eventos se especializou em oferecer soluções completas de logística e gerenciamento para circos e espetáculos itinerantes.',
-        'about_text2': 'Nossa equipe altamente qualificada garante que cada evento seja executado com a máxima segurança, eficiência e profissionalismo, proporcionando experiências inesquecíveis para o público.',
-        'about_text3': 'Fundada com o objetivo de revolucionar a logística circense, a Oswalda Produções nasceu da paixão pelo mundo do entretenimento e da necessidade de profissionalizar os serviços de apoio aos espetáculos itinerantes.',
-        'about_text4': 'Nossa trajetória começou com pequenos eventos locais e cresceu através da dedicação em sempre superar as expectativas de nossos clientes, construindo relacionamentos duradouros baseados na confiança e na excelência operacional.',
-        'about_text5': 'Hoje, somos reconhecidos como referência no mercado, atendendo desde pequenas companhias até grandes produções internacionais, sempre mantendo nosso compromisso com a segurança, qualidade e inovação.',
+        'about_text1': 'Com mais de 40 anos de experiência na indústria do entretenimento, Louis Leonard fundou a Oswalda P&E, especializada em fornecer soluções completas em gerenciamento de eventos, reservas e coordenação logística para circos e espetáculos itinerantes.',
+        'about_text2': 'Nossa equipe altamente qualificada garante que cada evento seja executado com o máximo de eficiência e profissionalismo, proporcionando experiências inesquecíveis para o público.',
+        'about_text3': 'A Oswalda Productions nasceu da paixão pelo mundo do entretenimento e da necessidade de profissionalizar os serviços de apoio a espetáculos itinerantes.',
+        'about_text4': 'Somos reconhecidos como referência no mercado norte-americano/europeu, atendendo desde pequenas empresas até grandes produções internacionais, mantendo sempre nosso compromisso com a excelência, qualidade e inovação.',
+        'about_text5': 'Nossa missão é expandir nossos horizontes para a América Latina, levando nossa experiência e dedicação, garantindo que cada apresentação seja um sucesso absoluto.',
         'about_mission': 'Nossa Missão',
         'about_mission_text': 'Proporcionar soluções logísticas inovadoras e seguras para o mundo circense, garantindo que cada apresentação seja um sucesso absoluto.',
         
@@ -70,7 +71,7 @@ TRANSLATIONS = {
         
         # Footer
         'footer_contact': 'Contato',
-        'footer_email': 'contato@oswaldaproducoes.com',
+        'footer_email': 'louis.leonard1313@gmail.com',
         'footer_phone': '+55 (11) 9999-9999',
         'footer_phone': '+1 (514) 793-8651',
         'footer_follow': 'Siga-nos',
@@ -133,7 +134,27 @@ TRANSLATIONS = {
         'cta_ready_title': 'Pronto para transformar seu evento em um sucesso?',
         'cta_ready_subtitle': 'Entre em contato conosco e descubra como podemos tornar seu circo ainda mais especial.',
         'cta_project_title': 'Pronto para começar seu projeto?',
-        'cta_project_subtitle': 'Entre em contato conosco para discutir suas necessidades específicas e receber um orçamento personalizado.'
+        'cta_project_subtitle': 'Entre em contato conosco para discutir suas necessidades específicas e receber um orçamento personalizado.',
+        
+        # Team Page
+        'team_title': 'Nosso Time',
+        'team_subtitle': 'Profissionais Experientes e Dedicados',
+        'team_desc': 'Conheça a equipe de especialistas que torna possível a realização de eventos circenses excepcionais.',
+        'team_founder_title': 'Fundador e CEO',
+        'team_founder_desc': 'Com mais de 40 anos de experiência na indústria do entretenimento, Louis Leonard lidera nossa visão de excelência em logística circense.',
+        'team_operations_name': 'Equipe de Operações',
+        'team_operations_title': 'Coordenação Logística',
+        'team_operations_desc': 'Especialistas em montagem, transporte e coordenação de equipamentos para garantir operações perfeitas.',
+        'team_safety_name': 'Equipe de Segurança',
+        'team_safety_title': 'Segurança e Qualidade',
+        'team_safety_desc': 'Profissionais certificados que garantem os mais altos padrões de segurança em todos os eventos.',
+        'team_values_title': 'Nossos Valores',
+        'team_value1_title': 'Excelência',
+        'team_value1_desc': 'Comprometimento com a qualidade superior em cada projeto.',
+        'team_value2_title': 'Confiança',
+        'team_value2_desc': 'Relacionamentos duradouros baseados em transparência e profissionalismo.',
+        'team_value3_title': 'Inovação',
+        'team_value3_desc': 'Soluções criativas e tecnologias avançadas para superar desafios.'
     },
     
     'en': {
@@ -141,13 +162,14 @@ TRANSLATIONS = {
         'nav_home': 'Home',
         'nav_about': 'About',
         'nav_services': 'Services',
-        'nav_portfolio': 'Portfolio',
+        'nav_portfolio': 'Our Clients',
         'nav_contact': 'Contact',
+        'nav_team': 'Our Team',
         'nav_quote': 'Request Quote',
         
         # Hero Section
-        'hero_title': 'Premium Circus Logistics',
-        'hero_subtitle': 'Quality, Safety and Excellence in Circus Event Management',
+        'hero_title': 'Premium Event Coordination and Management',
+        'hero_subtitle': 'Specialized in Quality Circus Event Management',
         'hero_cta': 'Request Quote',
         
         # About Page
@@ -203,7 +225,7 @@ TRANSLATIONS = {
         
         # Footer
         'footer_contact': 'Contact',
-        'footer_email': 'contact@oswaldaproductions.com',
+        'footer_email': 'louis.leonard1313@gmail.com',
         'footer_phone': '+55 (11) 9999-9999',
         'footer_phone': '+1 (514) 793-8651',
         'footer_follow': 'Follow us',
@@ -254,7 +276,27 @@ TRANSLATIONS = {
         'cta_ready_title': 'Ready to transform your event into a success?',
         'cta_ready_subtitle': 'Contact us and discover how we can make your circus even more special.',
         'cta_project_title': 'Ready to start your project?',
-        'cta_project_subtitle': 'Contact us to discuss your specific needs and receive a personalized quote.'
+        'cta_project_subtitle': 'Contact us to discuss your specific needs and receive a personalized quote.',
+        
+        # Team Page
+        'team_title': 'Our Team',
+        'team_subtitle': 'Experienced and Dedicated Professionals',
+        'team_desc': 'Meet the team of specialists who make exceptional circus events possible.',
+        'team_founder_title': 'Founder and CEO',
+        'team_founder_desc': 'With over 40 years of experience in the entertainment industry, Louis Leonard leads our vision of excellence in circus logistics.',
+        'team_operations_name': 'Operations Team',
+        'team_operations_title': 'Logistics Coordination',
+        'team_operations_desc': 'Specialists in assembly, transportation and equipment coordination to ensure perfect operations.',
+        'team_safety_name': 'Safety Team',
+        'team_safety_title': 'Safety and Quality',
+        'team_safety_desc': 'Certified professionals who ensure the highest safety standards in all events.',
+        'team_values_title': 'Our Values',
+        'team_value1_title': 'Excellence',
+        'team_value1_desc': 'Commitment to superior quality in every project.',
+        'team_value2_title': 'Trust',
+        'team_value2_desc': 'Lasting relationships based on transparency and professionalism.',
+        'team_value3_title': 'Innovation',
+        'team_value3_desc': 'Creative solutions and advanced technologies to overcome challenges.'
     },
     
     'fr': {
@@ -262,13 +304,14 @@ TRANSLATIONS = {
         'nav_home': 'Accueil',
         'nav_about': 'À Propos',
         'nav_services': 'Services',
-        'nav_portfolio': 'Portfolio',
+        'nav_portfolio': 'Nos Clients',
         'nav_contact': 'Contact',
+        'nav_team': 'Notre Équipe',
         'nav_quote': 'Demander un Devis',
         
         # Hero Section
-        'hero_title': 'Logistique Premium pour Cirques',
-        'hero_subtitle': 'Qualité, Sécurité et Excellence dans la Gestion d\'Événements de Cirque',
+        'hero_title': 'Coordination et gestion d\'événements haut de gamme',
+        'hero_subtitle': 'Spécialisé dans la gestion d\'événements de cirque de qualité',
         'hero_cta': 'Demander un Devis',
         
         # About Page
@@ -324,7 +367,7 @@ TRANSLATIONS = {
         
         # Footer
         'footer_contact': 'Contact',
-        'footer_email': 'contact@oswaldaproductions.com',
+        'footer_email': 'louis.leonard1313@gmail.com',
         'footer_phone': '+55 (11) 9999-9999',
         'footer_phone': '+1 (514) 793-8651',
         'footer_follow': 'Suivez-nous',
@@ -391,7 +434,27 @@ TRANSLATIONS = {
     'cta_ready_title': 'Prêt à transformer votre événement en succès?',
     'cta_ready_subtitle': 'Contactez-nous et découvrez comment nous pouvons rendre votre cirque encore plus spécial.',
     'cta_project_title': 'Prêt à commencer votre projet?',
-    'cta_project_subtitle': 'Contactez-nous pour discuter de vos besoins spécifiques et recevoir un devis personnalisé.'
+    'cta_project_subtitle': 'Contactez-nous pour discuter de vos besoins spécifiques et recevoir un devis personnalisé.',
+    
+    # Team Page
+    'team_title': 'Notre Équipe',
+    'team_subtitle': 'Professionnels Expérimentés et Dévoués',
+    'team_desc': 'Rencontrez l\'équipe de spécialistes qui rend possible la réalisation d\'événements de cirque exceptionnels.',
+    'team_founder_title': 'Fondateur et PDG',
+    'team_founder_desc': 'Avec plus de 40 ans d\'expérience dans l\'industrie du divertissement, Louis Leonard dirige notre vision d\'excellence en logistique de cirque.',
+    'team_operations_name': 'Équipe Opérationnelle',
+    'team_operations_title': 'Coordination Logistique',
+    'team_operations_desc': 'Spécialistes en montage, transport et coordination d\'équipements pour assurer des opérations parfaites.',
+    'team_safety_name': 'Équipe de Sécurité',
+    'team_safety_title': 'Sécurité et Qualité',
+    'team_safety_desc': 'Professionnels certifiés qui garantissent les plus hauts standards de sécurité dans tous les événements.',
+    'team_values_title': 'Nos Valeurs',
+    'team_value1_title': 'Excellence',
+    'team_value1_desc': 'Engagement envers la qualité supérieure dans chaque projet.',
+    'team_value2_title': 'Confiance',
+    'team_value2_desc': 'Relations durables basées sur la transparence et le professionnalisme.',
+    'team_value3_title': 'Innovation',
+    'team_value3_desc': 'Solutions créatives et technologies avancées pour surmonter les défis.'
     }
 }
 
