@@ -431,6 +431,29 @@ function showAlert(message, type = 'info') {
     }, 5000);
 }
 
+// Language switching with smooth transition and video switching
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize video display based on current language
+    initLanguageVideos();
+});
+
+function initLanguageVideos() {
+    const currentLanguage = document.documentElement.lang || 'pt';
+    switchLanguageVideo(currentLanguage);
+}
+
+function switchLanguageVideo(language) {
+    const allVideos = document.querySelectorAll('.language-video');
+    allVideos.forEach(video => {
+        video.style.display = 'none';
+    });
+    
+    const targetVideo = document.getElementById(`video-${language}`);
+    if (targetVideo) {
+        targetVideo.style.display = 'block';
+    }
+}
+
 // Language switching with smooth transition
 document.querySelectorAll('a[href*="/set_language/"]').forEach(link => {
     link.addEventListener('click', function(e) {
