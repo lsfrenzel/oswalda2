@@ -132,6 +132,37 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- E muito mais! -->
+            <div class="col-lg-4 col-md-6">
+                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                    <div class="client-image-container">
+                        <img src="{{ url_for('static', filename='images/inicio.jpeg') }}" 
+                             alt="E muito mais!" class="img-fluid client-img active-img" data-client="muito-mais">
+                        <img src="{{ url_for('static', filename='images/inicio2.jpeg') }}" 
+                             alt="E muito mais! 2" class="img-fluid client-img" data-client="muito-mais">
+                        <img src="{{ url_for('static', filename='images/inicio3.jpeg') }}" 
+                             alt="E muito mais! 3" class="img-fluid client-img" data-client="muito-mais">
+                        <img src="{{ url_for('static', filename='images/inicio4.jpeg') }}" 
+                             alt="E muito mais! 4" class="img-fluid client-img" data-client="muito-mais">
+                        <img src="{{ url_for('static', filename='images/inicio5.jpeg') }}" 
+                             alt="E muito mais! 5" class="img-fluid client-img" data-client="muito-mais">
+                        <img src="{{ url_for('static', filename='images/inicio6.jpeg') }}" 
+                             alt="E muito mais! 6" class="img-fluid client-img" data-client="muito-mais">
+                    </div>
+                    <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                        <div class="text-center text-white">
+                            <h4 class="fw-bold mb-3">E muito mais!</h4>
+                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('muito-mais')">
+                                <i class="fas fa-images me-1"></i>Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-counter">
+                        <span class="current-image">1</span> / <span class="total-images">6</span>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Stats Section -->

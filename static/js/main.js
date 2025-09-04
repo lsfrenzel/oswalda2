@@ -479,8 +479,12 @@ if ('serviceWorker' in navigator) {
 let clientImageIndexes = {
     'cirque-paris': 0,
     'europa-circus': 0,
-    'cirque-mondial': 0
+    'cirque-mondial': 0,
+    'muito-mais': 0
 };
+
+// Auto-cycling intervals for all clients
+let autoSwitchIntervals = {};
 
 function switchClientImage(clientId) {
     const container = document.querySelector(`[data-client="${clientId}"]`).closest('.client-card');
@@ -506,26 +510,44 @@ function switchClientImage(clientId) {
     }, 300);
 }
 
-// Auto-switch images on hover (optional)
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize auto-cycling for all cards
+function startAutoSwitching() {
     const clientCards = document.querySelectorAll('.client-card');
     
     clientCards.forEach(card => {
         const images = card.querySelectorAll('.client-img');
         if (images.length > 1) {
-            let autoSwitchInterval;
+            const clientId = images[0].getAttribute('data-client');
             
+            // Start automatic cycling for this card
+            autoSwitchIntervals[clientId] = setInterval(() => {
+                switchClientImage(clientId);
+            }, 3000); // Switch every 3 seconds
+            
+            // Pause on hover, resume on mouse leave
             card.addEventListener('mouseenter', function() {
-                const clientId = images[0].getAttribute('data-client');
-                autoSwitchInterval = setInterval(() => {
-                    switchClientImage(clientId);
-                }, 2000);
+                clearInterval(autoSwitchIntervals[clientId]);
             });
             
             card.addEventListener('mouseleave', function() {
-                clearInterval(autoSwitchInterval);
+                autoSwitchIntervals[clientId] = setInterval(() => {
+                    switchClientImage(clientId);
+                }, 3000);
             });
         }
+    });
+}
+
+// Start auto-switching when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Small delay to ensure all images are loaded
+    setTimeout(startAutoSwitching, 1000);
+});
+
+// Clean up intervals when page unloads
+window.addEventListener('beforeunload', function() {
+    Object.values(autoSwitchIntervals).forEach(interval => {
+        clearInterval(interval);
     });
 });
 
