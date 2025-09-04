@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ t('nav_home') }}{% endblock %} - Oswalda Produções & Eventos</title>
+    <title>{% block title %}{{ t('nav_home') }}{% endblock %} - {% if current_language == 'pt' %}Oswalda Produções & Eventos{% else %}Oswalda Productions & Events{% endif %}</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo_oswalda.png') }}">
@@ -23,7 +23,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
-    <meta name="description" content="Oswalda Produções & Eventos - Logística premium para circos com qualidade, segurança e excelência.">
+    <meta name="description" content="{% if current_language == 'pt' %}Oswalda Produções & Eventos - Logística premium para circos com qualidade, segurança e excelência.{% elif current_language == 'en' %}Oswalda Productions & Events - Premium circus logistics with quality, safety and excellence.{% else %}Oswalda Productions & Events - Logistique de cirque haut de gamme avec qualité, sécurité et excellence.{% endif %}">
     <meta name="keywords" content="circo, logística, eventos, produção, segurança, qualidade">
 </head>
 <body>
@@ -32,7 +32,7 @@
         <div class="container">
             <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='images/logo_oswalda.png') }}" alt="Oswalda Logo" class="me-2" style="height: 40px; width: auto;">
-                <span>Oswalda Produções</span>
+                <span>{% if current_language == 'pt' %}Oswalda Produções{% else %}Oswalda Productions{% endif %}</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -105,7 +105,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <h5 class="text-primary mb-3">
-                        <i class="fas fa-tent me-2"></i>Oswalda Produções
+                        <i class="fas fa-tent me-2"></i>{% if current_language == 'pt' %}Oswalda Produções{% else %}Oswalda Productions{% endif %}
                     </h5>
                     <p>{{ t('hero_subtitle') }}</p>
                 </div>
@@ -134,7 +134,7 @@
             <hr class="my-4">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Oswalda Produções & Eventos. {{ t('footer_rights') }}</p>
+                    <p class="mb-0">&copy; 2025 {% if current_language == 'pt' %}Oswalda Produções & Eventos{% else %}Oswalda Productions & Events{% endif %}. {{ t('footer_rights') }}</p>
                 </div>
             </div>
         </div>

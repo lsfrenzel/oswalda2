@@ -101,6 +101,9 @@ TRANSLATIONS = {
         'contact_placeholder': 'Conte-nos sobre seu projeto, suas necessidades específicas e como podemos ajudá-lo...',
         
         # Portfolio Page - Additional
+        'portfolio_view_more': 'Ver Mais',
+        'portfolio_premium_client': 'Cliente Premium',
+        'portfolio_and_more': 'E muito mais!',
         'portfolio_project1_title': 'Grande Circo Nacional',
         'portfolio_project1_desc': 'Turnê 2023 - 50 cidades',
         'portfolio_project2_title': 'Circo Voador',
@@ -255,6 +258,9 @@ TRANSLATIONS = {
         'contact_placeholder': 'Tell us about your project, your specific needs and how we can help you...',
         
         # Portfolio Page - Additional
+        'portfolio_view_more': 'View More',
+        'portfolio_premium_client': 'Premium Client',
+        'portfolio_and_more': 'And much more!',
         'portfolio_project1_title': 'Great National Circus',
         'portfolio_project1_desc': '2023 Tour - 50 cities',
         'portfolio_project2_title': 'Flying Circus',
@@ -397,6 +403,9 @@ TRANSLATIONS = {
         'contact_placeholder': 'Parlez-nous de votre projet, de vos besoins spécifiques et de la façon dont nous pouvons vous aider...',
         
         # Portfolio Page - Additional
+        'portfolio_view_more': 'Voir Plus',
+        'portfolio_premium_client': 'Client Premium',
+        'portfolio_and_more': 'Et bien plus!',
         'portfolio_project1_title': 'Grand Cirque National',
         'portfolio_project1_desc': 'Tournée 2023 - 50 villes',
         'portfolio_project2_title': 'Cirque Volant',
