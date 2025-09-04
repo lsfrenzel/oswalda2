@@ -22,81 +22,112 @@
             </div>
         </div>
         
-        <!-- Portfolio Gallery -->
+        <!-- Client Portfolio Gallery -->
         <div class="row g-4">
+            <!-- Cirque De Paris -->
             <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item position-relative overflow-hidden rounded shadow scale-in">
-                    <img src="static/images/1.jpg" 
-                         alt="Circus performance" class="img-fluid portfolio-img">
-                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                    <div class="client-image-container">
+                        <img src="{{ url_for('static', filename='images/CirqueDeParis.jpeg') }}" 
+                             alt="Cirque De Paris" class="img-fluid client-img active-img" data-client="cirque-paris">
+                        <img src="{{ url_for('static', filename='images/CirqueDeParis2.jpeg') }}" 
+                             alt="Cirque De Paris 2" class="img-fluid client-img" data-client="cirque-paris">
+                        <img src="{{ url_for('static', filename='images/CirqueDeParis3.jpeg') }}" 
+                             alt="Cirque De Paris 3" class="img-fluid client-img" data-client="cirque-paris">
+                        <img src="{{ url_for('static', filename='images/CirqueDeParis4.jpeg') }}" 
+                             alt="Cirque De Paris 4" class="img-fluid client-img" data-client="cirque-paris">
+                    </div>
+                    <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center text-white">
-                            <h5 class="fw-bold">{{ t('portfolio_project1_title') }}</h5>
-                            <p class="mb-0">{{ t('portfolio_project1_desc') }}</p>
+                            <h4 class="fw-bold mb-3">Cirque De Paris</h4>
+                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('cirque-paris')">
+                                <i class="fas fa-images me-1"></i>Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-counter">
+                        <span class="current-image">1</span> / <span class="total-images">4</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Europa Super Circus -->
+            <div class="col-lg-4 col-md-6">
+                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                    <div class="client-image-container">
+                        <img src="{{ url_for('static', filename='images/EuropaSuperCircus.jpeg') }}" 
+                             alt="Europa Super Circus" class="img-fluid client-img active-img" data-client="europa-circus">
+                        <img src="{{ url_for('static', filename='images/EuropaSuperCircus2.jpeg') }}" 
+                             alt="Europa Super Circus 2" class="img-fluid client-img" data-client="europa-circus">
+                    </div>
+                    <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                        <div class="text-center text-white">
+                            <h4 class="fw-bold mb-3">Europa Super Circus</h4>
+                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('europa-circus')">
+                                <i class="fas fa-images me-1"></i>Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-counter">
+                        <span class="current-image">1</span> / <span class="total-images">2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cirque Mondial -->
+            <div class="col-lg-4 col-md-6">
+                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                    <div class="client-image-container">
+                        <img src="{{ url_for('static', filename='images/CirqueMondial.jpeg') }}" 
+                             alt="Cirque Mondial" class="img-fluid client-img active-img" data-client="cirque-mondial">
+                        <img src="{{ url_for('static', filename='images/CirqueMondial2.jpeg') }}" 
+                             alt="Cirque Mondial 2" class="img-fluid client-img" data-client="cirque-mondial">
+                    </div>
+                    <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                        <div class="text-center text-white">
+                            <h4 class="fw-bold mb-3">Cirque Mondial</h4>
+                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('cirque-mondial')">
+                                <i class="fas fa-images me-1"></i>Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-counter">
+                        <span class="current-image">1</span> / <span class="total-images">2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cirque Du Luxe -->
+            <div class="col-lg-4 col-md-6">
+                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                    <div class="client-image-container">
+                        <img src="{{ url_for('static', filename='images/CirqueDuLuxe.jpeg') }}" 
+                             alt="Cirque Du Luxe" class="img-fluid client-img active-img" data-client="cirque-luxe">
+                    </div>
+                    <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                        <div class="text-center text-white">
+                            <h4 class="fw-bold mb-3">Cirque Du Luxe</h4>
+                            <div class="single-image-badge">
+                                <i class="fas fa-star me-1"></i>Cliente Premium
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <!-- Canadas Circus -->
             <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item position-relative overflow-hidden rounded shadow scale-in">
-                    <img src="static/images/2.jpg" 
-                         alt="Circus acrobatics" class="img-fluid portfolio-img">
-                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                        <div class="text-center text-white">
-                            <h5 class="fw-bold">{{ t('portfolio_project2_title') }}</h5>
-                            <p class="mb-0">{{ t('portfolio_project2_desc') }}</p>
-                        </div>
+                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                    <div class="client-image-container">
+                        <img src="{{ url_for('static', filename='images/CanadasCircus.jpeg') }}" 
+                             alt="Canadas Circus" class="img-fluid client-img active-img" data-client="canadas-circus">
                     </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item position-relative overflow-hidden rounded shadow scale-in">
-                    <img src="static/images/3.jpg" 
-                         alt="Circus tent" class="img-fluid portfolio-img">
-                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                    <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center text-white">
-                            <h5 class="fw-bold">{{ t('portfolio_project3_title') }}</h5>
-                            <p class="mb-0">{{ t('portfolio_project3_desc') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item position-relative overflow-hidden rounded shadow scale-in">
-                    <img src="static/images/4.jpg" 
-                         alt="Circus backstage" class="img-fluid portfolio-img">
-                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                        <div class="text-center text-white">
-                            <h5 class="fw-bold">{{ t('portfolio_project4_title') }}</h5>
-                            <p class="mb-0">{{ t('portfolio_project4_desc') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item position-relative overflow-hidden rounded shadow scale-in">
-                    <img src="static/images/5.jpg" 
-                         alt="Circus equipment" class="img-fluid portfolio-img">
-                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                        <div class="text-center text-white">
-                            <h5 class="fw-bold">{{ t('portfolio_project5_title') }}</h5>
-                            <p class="mb-0">{{ t('portfolio_project5_desc') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="portfolio-item position-relative overflow-hidden rounded shadow scale-in">
-                    <img src="static/images/6.jpg" 
-                         alt="Circus performance" class="img-fluid portfolio-img">
-                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                        <div class="text-center text-white">
-                            <h5 class="fw-bold">{{ t('portfolio_project6_title') }}</h5>
-                            <p class="mb-0">{{ t('portfolio_project6_desc') }}</p>
+                            <h4 class="fw-bold mb-3">Canadas Circus</h4>
+                            <div class="single-image-badge">
+                                <i class="fas fa-star me-1"></i>Cliente Premium
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +135,7 @@
         </div>
         
         <!-- Stats Section -->
-        <div class="row mt-5 pt-5 bg-light rounded p-5">
+        <div class="row mt-5 pt-5 bg-light rounded-4 p-5">
             <div class="col-lg-3 col-md-6 text-center mb-4">
                 <div class="stat-number text-primary fw-bold display-4">500+</div>
                 <p class="text-muted">{{ t('portfolio_stat1_label') }}</p>

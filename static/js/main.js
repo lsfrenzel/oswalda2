@@ -475,6 +475,60 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// Client Portfolio Image Switching
+let clientImageIndexes = {
+    'cirque-paris': 0,
+    'europa-circus': 0,
+    'cirque-mondial': 0
+};
+
+function switchClientImage(clientId) {
+    const container = document.querySelector(`[data-client="${clientId}"]`).closest('.client-card');
+    const images = container.querySelectorAll(`[data-client="${clientId}"]`);
+    const currentImageSpan = container.querySelector('.current-image');
+    
+    if (images.length <= 1) return; // No switching for single images
+    
+    // Add switching animation
+    container.classList.add('switching');
+    
+    // Hide current image
+    images[clientImageIndexes[clientId]].classList.remove('active-img');
+    
+    // Move to next image
+    clientImageIndexes[clientId] = (clientImageIndexes[clientId] + 1) % images.length;
+    
+    // Show new image with delay for smooth transition
+    setTimeout(() => {
+        images[clientImageIndexes[clientId]].classList.add('active-img');
+        currentImageSpan.textContent = clientImageIndexes[clientId] + 1;
+        container.classList.remove('switching');
+    }, 300);
+}
+
+// Auto-switch images on hover (optional)
+document.addEventListener('DOMContentLoaded', function() {
+    const clientCards = document.querySelectorAll('.client-card');
+    
+    clientCards.forEach(card => {
+        const images = card.querySelectorAll('.client-img');
+        if (images.length > 1) {
+            let autoSwitchInterval;
+            
+            card.addEventListener('mouseenter', function() {
+                const clientId = images[0].getAttribute('data-client');
+                autoSwitchInterval = setInterval(() => {
+                    switchClientImage(clientId);
+                }, 2000);
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                clearInterval(autoSwitchInterval);
+            });
+        }
+    });
+});
+
 // Performance monitoring
 window.addEventListener('load', function() {
     // Log loading time for optimization

@@ -40,21 +40,21 @@
                 <div class="video-showcase rounded-4 overflow-hidden shadow-lg">
                     <!-- Portuguese Video (Default) -->
                     <div class="language-video" id="video-pt" style="display: block;">
-                        <video class="w-100 h-100" controls playsinline poster="">
+                        <video class="w-100 h-100" controls playsinline poster="{{ url_for('static', filename='images/circus_oswalda_poster.png') }}">
                             <source src="{{ url_for('static', filename='videos/circo_pt_oswalda.mp4') }}" type="video/mp4">
                             Seu navegador não suporta a tag de vídeo.
                         </video>
                     </div>
                     <!-- English Video -->
                     <div class="language-video" id="video-en" style="display: none;">
-                        <video class="w-100 h-100" controls playsinline poster="">
+                        <video class="w-100 h-100" controls playsinline poster="{{ url_for('static', filename='images/circus_oswalda_poster.png') }}">
                             <source src="{{ url_for('static', filename='videos/circus_en_oswalda.mp4') }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
                     <!-- French Video -->
                     <div class="language-video" id="video-fr" style="display: none;">
-                        <video class="w-100 h-100" controls playsinline poster="">
+                        <video class="w-100 h-100" controls playsinline poster="{{ url_for('static', filename='images/circus_oswalda_poster.png') }}">
                             <source src="{{ url_for('static', filename='videos/circus_french_oswalda.mp4') }}" type="video/mp4">
                             Votre navigateur ne prend pas en charge la balise vidéo.
                         </video>

@@ -1017,6 +1017,102 @@ html {
     border-color: rgba(0, 123, 255, 0.3);
 }
 
+/* Enhanced Client Portfolio Cards */
+.client-card {
+    position: relative;
+    height: 350px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+}
+
+.client-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 123, 255, 0.3);
+}
+
+.client-image-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.client-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.client-img.active-img {
+    opacity: 1;
+}
+
+.client-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 123, 255, 0.85) 0%,
+        rgba(220, 53, 69, 0.8) 50%,
+        rgba(255, 193, 7, 0.75) 100%
+    );
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.client-card:hover .client-overlay {
+    opacity: 1;
+}
+
+.image-counter {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.single-image-badge {
+    background: rgba(255, 193, 7, 0.9);
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Image switching animation */
+.switching .client-img {
+    transform: scale(1.1);
+}
+
+/* Button styling for image switching */
+.client-overlay button {
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--dark-color) !important;
+    border: none;
+    font-weight: 600;
+}
+
+.client-overlay button:hover {
+    background: white !important;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .content-section {
@@ -1048,5 +1144,19 @@ html {
     .team-photo img {
         width: 120px;
         height: 120px;
+    }
+    
+    .client-card {
+        height: 280px;
+        margin-bottom: 2rem;
+    }
+    
+    .client-overlay h4 {
+        font-size: 1.2rem;
+    }
+    
+    .image-counter {
+        font-size: 0.75rem;
+        padding: 4px 8px;
     }
 }
