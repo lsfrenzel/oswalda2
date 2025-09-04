@@ -830,3 +830,85 @@ html {
         max-height: 300px;
     }
 }
+
+/* Enhanced About Page Styles */
+.about-image {
+    transition: all 0.4s ease;
+    border: 3px solid rgba(0, 123, 255, 0.1);
+    position: relative;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 123, 255, 0.3);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(220, 53, 69, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.image-container:hover::before {
+    opacity: 1;
+}
+
+.content-section {
+    padding: 2rem;
+    background: rgba(248, 249, 250, 0.5);
+    border-radius: 20px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    background: rgba(248, 249, 250, 0.8);
+    transform: translateX(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo in navbar styling */
+.navbar-brand img {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Mobile responsiveness for about page */
+@media (max-width: 768px) {
+    .content-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-image {
+        margin-bottom: 1rem;
+    }
+    
+    .navbar-brand span {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-brand img {
+        height: 35px !important;
+    }
+}

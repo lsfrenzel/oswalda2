@@ -16,18 +16,53 @@
 
 <section class="py-5">
     <div class="container">
+        <!-- First Row: Image Left, Text Right -->
         <div class="row align-items-center mb-5">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="static/images/oswalda.jpg" 
-                     alt="Circus backstage" class="img-fluid rounded shadow slide-in-left">
+            <div class="col-lg-6 mb-4 mb-lg-0 order-lg-1">
+                <div class="image-container">
+                    <img src="static/images/oswalda.jpg" 
+                         alt="Circus backstage" class="img-fluid rounded-4 shadow-lg slide-in-left about-image">
+                </div>
             </div>
-            <div class="col-lg-6 slide-in-right">
-                <h2 class="fw-bold text-primary mb-4">{{ t('about_history') }}</h2>
-                <p class="mb-4">{{ t('about_text1') }}</p>
-                <p class="mb-4">{{ t('about_text2') }}</p>
-                <p class="mb-4">{{ t('about_text3') }}</p>
-                <p class="mb-4">{{ t('about_text4') }}</p>
-                <p class="mb-0">{{ t('about_text5') }}</p>
+            <div class="col-lg-6 slide-in-right order-lg-2">
+                <div class="content-section">
+                    <h2 class="fw-bold text-primary mb-4 display-6">{{ t('about_history') }}</h2>
+                    <p class="mb-4 fs-5 text-muted lh-lg">{{ t('about_text1') }}</p>
+                    <p class="mb-0 fs-6 lh-lg">{{ t('about_text2') }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second Row: Text Left, Louis Image Right -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0 order-lg-1">
+                <div class="content-section">
+                    <h3 class="fw-bold text-secondary mb-4">Louis Leonard</h3>
+                    <p class="mb-4 fs-5 text-muted lh-lg">{{ t('about_text3') }}</p>
+                    <p class="mb-0 fs-6 lh-lg">{{ t('about_text4') }}</p>
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/louis.jpeg') }}" 
+                         alt="Louis Leonard" class="img-fluid rounded-4 shadow-lg slide-in-right about-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Third Row: Louis Image 2 Left, Text Right -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0 order-lg-1">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/louis2.jpeg') }}" 
+                         alt="Louis Leonard Professional" class="img-fluid rounded-4 shadow-lg slide-in-left about-image">
+                </div>
+            </div>
+            <div class="col-lg-6 slide-in-right order-lg-2">
+                <div class="content-section">
+                    <h3 class="fw-bold text-secondary mb-4">{% if current_language == 'pt' %}Nossa Expansão{% elif current_language == 'fr' %}Notre Expansion{% else %}Global Expansion{% endif %}</h3>
+                    <p class="mb-0 fs-5 text-muted lh-lg">{{ t('about_text5') }}</p>
+                </div>
             </div>
         </div>
         
