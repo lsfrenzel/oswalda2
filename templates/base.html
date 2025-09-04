@@ -32,17 +32,36 @@
         <div class="container">
             <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='images/logo_oswalda.png') }}" alt="Oswalda Logo" class="me-2" style="height: 40px; width: auto;">
-                <span class="d-none d-sm-inline">{% if current_language == 'pt' %}Oswalda Produções{% else %}Oswalda Productions{% endif %}</span>
-                <span class="d-sm-none">{% if current_language == 'pt' %}Oswalda{% else %}Oswalda{% endif %}</span>
+                <span>{% if current_language == 'pt' %}Oswalda Produções{% else %}Oswalda Productions{% endif %}</span>
             </a>
             
+            <!-- Desktop Controls (hidden on mobile) -->
+            <div class="d-none d-lg-flex align-items-center">
+                <!-- Language Selector -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i>
+                        {% if current_language == 'pt' %}PT{% elif current_language == 'en' %}EN{% else %}FR{% endif %}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="{{ url_for('set_language', language='pt') }}">Português</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('set_language', language='en') }}">English</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('set_language', language='fr') }}">Français</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quote Button -->
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                    <i class="fas fa-envelope me-1"></i>{{ t('nav_quote') }}
+                </a>
+            </div>
+            
             <!-- Mobile Controls -->
-            <div class="d-flex align-items-center">
-                <!-- Language Selector (Always Visible) -->
+            <div class="d-lg-none d-flex align-items-center">
+                <!-- Language Selector (Mobile) -->
                 <div class="dropdown me-2">
                     <button class="btn btn-outline-primary btn-sm dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-globe me-1"></i>
-                        <span class="d-none d-sm-inline">{% if current_language == 'pt' %}PT{% elif current_language == 'en' %}EN{% else %}FR{% endif %}</span>
+                        <i class="fas fa-globe"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="{{ url_for('set_language', language='pt') }}">
@@ -60,8 +79,33 @@
                 </button>
             </div>
             
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mt-3 mt-lg-0">
+            <!-- Desktop Navigation -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNavDesktop">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">{{ t('nav_home') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">{{ t('nav_about') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('services') }}">{{ t('nav_services') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('portfolio') }}">{{ t('nav_portfolio') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('team') }}">{{ t('nav_team') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">{{ t('nav_contact') }}</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
+                <ul class="navbar-nav me-auto mt-3">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}">{{ t('nav_home') }}</a>
                     </li>
@@ -82,8 +126,8 @@
                     </li>
                 </ul>
                 
-                <!-- Quote Button -->
-                <a href="{{ url_for('contact') }}" class="btn btn-primary mt-3 mt-lg-0 w-100 w-lg-auto">
+                <!-- Mobile Quote Button -->
+                <a href="{{ url_for('contact') }}" class="btn btn-primary mt-3 w-100">
                     <i class="fas fa-envelope me-1"></i>{{ t('nav_quote') }}
                 </a>
             </div>
