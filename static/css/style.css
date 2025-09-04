@@ -1129,25 +1129,62 @@ html {
 
 /* Desktop Navigation Improvements */
 @media (min-width: 992px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    
     .navbar-nav.mx-auto {
         margin-left: auto !important;
         margin-right: auto !important;
     }
     
-    .navbar-brand {
-        font-size: 1.25rem;
-    }
-    
     .nav-link {
         font-weight: 500;
-        margin: 0 0.5rem;
-        padding: 0.75rem 1rem !important;
+        margin: 0 0.75rem;
+        padding: 0.75rem 1.25rem !important;
         transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
     }
     
     .nav-link:hover {
         color: var(--primary-color) !important;
-        transform: translateY(-1px);
+        background-color: rgba(0, 123, 255, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+        width: 80%;
+    }
+    
+    .btn-primary {
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
     }
 }
 
