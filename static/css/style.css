@@ -143,10 +143,10 @@ body {
 .hero-cta {
     transform: translateY(0);
     transition: all 0.4s var(--bounce-timing);
-    box-shadow: 0 8px 25px rgba(14, 14, 14, 0.4);
+    box-shadow: 0 8px 25px rgba(243, 38, 51, 0.4);
     position: relative;
     overflow: hidden;
-    background: #0e0e0e;
+    background: #F32633;
     border: none;
 }
 
@@ -167,8 +167,8 @@ body {
 
 .hero-cta:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(14, 14, 14, 0.6);
-    background: #1a1a1a;
+    box-shadow: 0 15px 40px rgba(243, 38, 51, 0.6);
+    background: #d11f2a;
 }
 
 .hero-cta:active {
@@ -550,12 +550,12 @@ html {
 
 /* Custom Bootstrap Overrides */
 .btn-primary {
-    background: #0e0e0e;
+    background: #F32633;
     border: none;
 }
 
 .btn-primary:hover {
-    background: #1a1a1a;
+    background: #d11f2a;
 }
 
 .text-primary {
@@ -1187,13 +1187,13 @@ html {
         font-weight: 600;
         padding: 0.75rem 1.5rem;
         border-radius: 25px;
-        box-shadow: 0 4px 15px rgba(14, 14, 14, 0.3);
+        box-shadow: 0 4px 15px rgba(243, 38, 51, 0.3);
         transition: all 0.3s ease;
     }
     
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(14, 14, 14, 0.4);
+        box-shadow: 0 6px 20px rgba(243, 38, 51, 0.4);
     }
 }
 
