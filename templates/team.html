@@ -94,13 +94,18 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-5 bg-light">
-    <div class="container">
+<section class="team-cta-section py-5">
+    <div class="team-cta-overlay"></div>
+    <div class="container position-relative">
         <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h2 class="fw-bold text-primary mb-4">{{ t('cta_ready_title') }}</h2>
-                <p class="lead mb-4">{{ t('cta_ready_subtitle') }}</p>
-                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">{{ t('hero_cta') }}</a>
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="team-cta-content">
+                    <h2 class="team-cta-title fw-bold mb-4">{{ t('cta_ready_title') }}</h2>
+                    <p class="team-cta-subtitle lead mb-5">{{ t('cta_ready_subtitle') }}</p>
+                    <a href="https://wa.me/15147938651?text={{ t('whatsapp_message') | urlencode }}" target="_blank" class="btn btn-cta-custom btn-lg px-5 py-3">
+                        <i class="fab fa-whatsapp me-2"></i>Entre em contato
+                    </a>
+                </div>
             </div>
         </div>
     </div>
