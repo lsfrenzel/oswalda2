@@ -119,8 +119,7 @@ body {
     background: linear-gradient(
         45deg,
         rgba(1, 35, 152, 0.85) 0%,
-        rgba(220, 53, 69, 0.8) 50%,
-        rgba(255, 193, 7, 0.7) 100%
+        rgba(243, 38, 51, 0.85) 100%
     );
     z-index: -1;
     animation: overlayPulse 4s ease-in-out infinite alternate;
