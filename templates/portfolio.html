@@ -186,4 +186,21 @@
         </div>
     </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+    <button class="lightbox-arrow prev" onclick="navigateLightbox(-1, event)">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" class="lightbox-image" src="" alt="">
+        <div class="lightbox-counter">
+            <span id="lightbox-current">1</span> / <span id="lightbox-total">1</span>
+        </div>
+    </div>
+    <button class="lightbox-arrow next" onclick="navigateLightbox(1, event)">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
 {% endblock %}
