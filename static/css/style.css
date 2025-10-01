@@ -1251,19 +1251,26 @@ html {
 }
 
 .client-overlay {
-    background: linear-gradient(
-        135deg,
-        rgba(1, 35, 152, 0.85) 0%,
-        rgba(220, 53, 69, 0.8) 50%,
-        rgba(255, 193, 7, 0.75) 100%
-    );
-    opacity: 0;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(5px);
+    display: none;
 }
 
-.client-card:hover .client-overlay {
-    opacity: 1;
+/* New client info bar at bottom */
+.client-info-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+    padding: 20px;
+    z-index: 5;
+}
+
+.client-info-bar h4 {
+    color: white;
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .image-counter {
@@ -1295,19 +1302,16 @@ html {
     transform: scale(1.1);
 }
 
-/* Button styling for image switching */
-.client-overlay button {
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.9) !important;
-    color: var(--dark-color) !important;
-    border: none;
+/* Premium badge styling */
+.single-image-badge {
+    display: inline-block;
+    background: rgba(255, 193, 7, 0.95);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
-}
-
-.client-overlay button:hover {
-    background: white !important;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
 }
 
 /* Enhanced Navigation */
@@ -1498,8 +1502,8 @@ html {
         font-size: 1rem;
     }
     
-    .client-overlay h4 {
-        font-size: 1.3rem;
+    .client-info-bar h4 {
+        font-size: 1rem;
     }
     
     .image-counter {
