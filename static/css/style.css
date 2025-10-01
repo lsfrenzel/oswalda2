@@ -1,7 +1,7 @@
 /* Oswalda Produções & Eventos - Advanced Custom Styles */
 
 :root {
-    --primary-color: #007bff;
+    --primary-color: #012398;
     --secondary-color: #dc3545;
     --warning-color: #ffc107;
     --success-color: #28a745;
@@ -74,7 +74,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(1, 35, 152, 0.1), transparent);
     transition: left 0.6s ease;
 }
 
@@ -118,7 +118,7 @@ body {
 .hero-overlay {
     background: linear-gradient(
         45deg,
-        rgba(0, 123, 255, 0.85) 0%,
+        rgba(1, 35, 152, 0.85) 0%,
         rgba(220, 53, 69, 0.8) 50%,
         rgba(255, 193, 7, 0.7) 100%
     );
@@ -143,10 +143,10 @@ body {
 .hero-cta {
     transform: translateY(0);
     transition: all 0.4s var(--bounce-timing);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(1, 35, 152, 0.4);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(45deg, var(--primary-color), #0056b3);
+    background: linear-gradient(45deg, var(--primary-color), #011c6b);
     border: none;
 }
 
@@ -167,8 +167,8 @@ body {
 
 .hero-cta:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.6);
-    background: linear-gradient(45deg, #0056b3, var(--primary-color));
+    box-shadow: 0 15px 40px rgba(1, 35, 152, 0.6);
+    background: linear-gradient(45deg, #011c6b, var(--primary-color));
 }
 
 .hero-cta:active {
@@ -182,7 +182,7 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #fff, #f8f9fa);
-    border: 1px solid rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(1, 35, 152, 0.1);
 }
 
 /* Service detail cards styling */
@@ -278,7 +278,7 @@ body {
 .portfolio-overlay {
     background: linear-gradient(
         135deg,
-        rgba(0, 123, 255, 0.95) 0%,
+        rgba(1, 35, 152, 0.95) 0%,
         rgba(220, 53, 69, 0.9) 50%,
         rgba(255, 193, 7, 0.85) 100%
     );
@@ -324,7 +324,7 @@ body {
 
 .contact-form .form-control:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(1, 35, 152, 0.25);
     transform: translateY(-2px);
 }
 
@@ -550,12 +550,12 @@ html {
 
 /* Custom Bootstrap Overrides */
 .btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), #0056b3);
+    background: linear-gradient(45deg, var(--primary-color), #011c6b);
     border: none;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #0056b3, var(--primary-color));
+    background: linear-gradient(45deg, #011c6b, var(--primary-color));
 }
 
 .text-primary {
@@ -563,7 +563,7 @@ html {
 }
 
 .bg-primary {
-    background: linear-gradient(135deg, var(--primary-color), #0056b3) !important;
+    background: linear-gradient(135deg, var(--primary-color), #011c6b) !important;
 }
 
 .bg-danger {
@@ -834,14 +834,14 @@ html {
 /* Enhanced About Page Styles */
 .about-image {
     transition: all 0.4s ease;
-    border: 3px solid rgba(0, 123, 255, 0.1);
+    border: 3px solid rgba(1, 35, 152, 0.1);
     position: relative;
 }
 
 .about-image:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: rgba(0, 123, 255, 0.3);
+    border-color: rgba(1, 35, 152, 0.3);
 }
 
 .image-container {
@@ -857,7 +857,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(220, 53, 69, 0.05));
+    background: linear-gradient(135deg, rgba(1, 35, 152, 0.1), rgba(220, 53, 69, 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -887,7 +887,7 @@ html {
     padding: 0.8rem 0;
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 123, 255, 0.1);
+    border-bottom: 1px solid rgba(1, 35, 152, 0.1);
 }
 
 .navbar-brand {
@@ -942,19 +942,19 @@ html {
 
 .navbar-nav .nav-link:hover {
     color: var(--primary-color) !important;
-    background: rgba(0, 123, 255, 0.08);
+    background: rgba(1, 35, 152, 0.08);
     transform: translateY(-1px);
 }
 
 .navbar-nav .nav-link.active {
     color: var(--primary-color) !important;
-    background: rgba(0, 123, 255, 0.12);
+    background: rgba(1, 35, 152, 0.12);
     font-weight: 700;
 }
 
 /* Language Dropdown Enhancement */
 .dropdown-toggle {
-    border: 2px solid rgba(0, 123, 255, 0.2);
+    border: 2px solid rgba(1, 35, 152, 0.2);
     border-radius: 8px;
     padding: 0.5rem 1rem;
     font-weight: 600;
@@ -963,7 +963,7 @@ html {
 
 .dropdown-toggle:hover {
     border-color: var(--primary-color);
-    background: rgba(0, 123, 255, 0.05);
+    background: rgba(1, 35, 152, 0.05);
     transform: translateY(-1px);
 }
 
@@ -983,7 +983,7 @@ html {
 }
 
 .dropdown-item:hover {
-    background: rgba(0, 123, 255, 0.1);
+    background: rgba(1, 35, 152, 0.1);
     color: var(--primary-color);
     transform: translateX(5px);
 }
@@ -994,7 +994,7 @@ html {
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid rgba(0, 123, 255, 0.2);
+    border: 4px solid rgba(1, 35, 152, 0.2);
     transition: all 0.4s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -1007,14 +1007,14 @@ html {
 
 .team-member {
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 123, 255, 0.1);
+    border: 1px solid rgba(1, 35, 152, 0.1);
     background: linear-gradient(135deg, #fff, #f8f9fa);
 }
 
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
-    border-color: rgba(0, 123, 255, 0.3);
+    border-color: rgba(1, 35, 152, 0.3);
 }
 
 /* Enhanced Client Portfolio Cards */
@@ -1029,7 +1029,7 @@ html {
 .client-card:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    border-color: rgba(0, 123, 255, 0.3);
+    border-color: rgba(1, 35, 152, 0.3);
 }
 
 .client-image-container {
@@ -1056,7 +1056,7 @@ html {
 .client-overlay {
     background: linear-gradient(
         135deg,
-        rgba(0, 123, 255, 0.85) 0%,
+        rgba(1, 35, 152, 0.85) 0%,
         rgba(220, 53, 69, 0.8) 50%,
         rgba(255, 193, 7, 0.75) 100%
     );
@@ -1154,7 +1154,7 @@ html {
     
     .nav-link:hover {
         color: var(--primary-color) !important;
-        background-color: rgba(0, 123, 255, 0.1);
+        background-color: rgba(1, 35, 152, 0.1);
         transform: translateY(-2px);
     }
     
@@ -1178,13 +1178,13 @@ html {
         font-weight: 600;
         padding: 0.75rem 1.5rem;
         border-radius: 25px;
-        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(1, 35, 152, 0.3);
         transition: all 0.3s ease;
     }
     
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        box-shadow: 0 6px 20px rgba(1, 35, 152, 0.4);
     }
 }
 
@@ -1194,7 +1194,7 @@ html {
 }
 
 .dropdown-menu {
-    border: 1px solid rgba(0, 123, 255, 0.2);
+    border: 1px solid rgba(1, 35, 152, 0.2);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -1204,7 +1204,7 @@ html {
 }
 
 .dropdown-item:hover {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(1, 35, 152, 0.1);
     color: var(--primary-color);
 }
 
