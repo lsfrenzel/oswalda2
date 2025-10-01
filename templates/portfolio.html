@@ -26,7 +26,7 @@
         <div class="row g-4">
             <!-- Cirque De Paris -->
             <div class="col-lg-4 col-md-6">
-                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                <div class="client-card position-relative overflow-hidden rounded-3 shadow scale-in">
                     <div class="client-image-container">
                         <img src="{{ url_for('static', filename='images/CirqueDeParis.jpeg') }}" 
                              alt="Cirque De Paris" class="img-fluid client-img active-img" data-client="cirque-paris">
@@ -36,13 +36,16 @@
                              alt="Cirque De Paris 3" class="img-fluid client-img" data-client="cirque-paris">
                         <img src="{{ url_for('static', filename='images/CirqueDeParis4.jpeg') }}" 
                              alt="Cirque De Paris 4" class="img-fluid client-img" data-client="cirque-paris">
+                        <button class="nav-arrow prev" onclick="navigateClientImage('cirque-paris', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="nav-arrow next" onclick="navigateClientImage('cirque-paris', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                     <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center text-white">
                             <h4 class="fw-bold mb-3">Cirque De Paris</h4>
-                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('cirque-paris')">
-                                <i class="fas fa-images me-1"></i>{{ t('portfolio_view_more') }}
-                            </button>
                         </div>
                     </div>
                     <div class="image-counter">
@@ -53,19 +56,22 @@
             
             <!-- Europa Super Circus -->
             <div class="col-lg-4 col-md-6">
-                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                <div class="client-card position-relative overflow-hidden rounded-3 shadow scale-in">
                     <div class="client-image-container">
                         <img src="{{ url_for('static', filename='images/EuropaSuperCircus.jpeg') }}" 
                              alt="Europa Super Circus" class="img-fluid client-img active-img" data-client="europa-circus">
                         <img src="{{ url_for('static', filename='images/EuropaSuperCircus2.jpeg') }}" 
                              alt="Europa Super Circus 2" class="img-fluid client-img" data-client="europa-circus">
+                        <button class="nav-arrow prev" onclick="navigateClientImage('europa-circus', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="nav-arrow next" onclick="navigateClientImage('europa-circus', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                     <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center text-white">
                             <h4 class="fw-bold mb-3">Europa Super Circus</h4>
-                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('europa-circus')">
-                                <i class="fas fa-images me-1"></i>{{ t('portfolio_view_more') }}
-                            </button>
                         </div>
                     </div>
                     <div class="image-counter">
@@ -76,19 +82,22 @@
             
             <!-- Cirque Mondial -->
             <div class="col-lg-4 col-md-6">
-                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                <div class="client-card position-relative overflow-hidden rounded-3 shadow scale-in">
                     <div class="client-image-container">
                         <img src="{{ url_for('static', filename='images/CirqueMondial.jpeg') }}" 
                              alt="Cirque Mondial" class="img-fluid client-img active-img" data-client="cirque-mondial">
                         <img src="{{ url_for('static', filename='images/CirqueMondial2.jpeg') }}" 
                              alt="Cirque Mondial 2" class="img-fluid client-img" data-client="cirque-mondial">
+                        <button class="nav-arrow prev" onclick="navigateClientImage('cirque-mondial', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="nav-arrow next" onclick="navigateClientImage('cirque-mondial', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                     <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center text-white">
                             <h4 class="fw-bold mb-3">Cirque Mondial</h4>
-                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('cirque-mondial')">
-                                <i class="fas fa-images me-1"></i>{{ t('portfolio_view_more') }}
-                            </button>
                         </div>
                     </div>
                     <div class="image-counter">
@@ -99,7 +108,7 @@
             
             <!-- Cirque Du Luxe -->
             <div class="col-lg-4 col-md-6">
-                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                <div class="client-card position-relative overflow-hidden rounded-3 shadow scale-in">
                     <div class="client-image-container">
                         <img src="{{ url_for('static', filename='images/CirqueDuLuxe.jpeg') }}" 
                              alt="Cirque Du Luxe" class="img-fluid client-img active-img" data-client="cirque-luxe">
@@ -117,7 +126,7 @@
             
             <!-- Canadas Circus -->
             <div class="col-lg-4 col-md-6">
-                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                <div class="client-card position-relative overflow-hidden rounded-3 shadow scale-in">
                     <div class="client-image-container">
                         <img src="{{ url_for('static', filename='images/CanadasCircus.jpeg') }}" 
                              alt="Canadas Circus" class="img-fluid client-img active-img" data-client="canadas-circus">
@@ -135,7 +144,7 @@
             
             <!-- E muito mais! -->
             <div class="col-lg-4 col-md-6">
-                <div class="client-card position-relative overflow-hidden rounded-4 shadow-lg scale-in">
+                <div class="client-card position-relative overflow-hidden rounded-3 shadow scale-in">
                     <div class="client-image-container">
                         <img src="{{ url_for('static', filename='images/inicio.jpeg') }}" 
                              alt="E muito mais!" class="img-fluid client-img active-img" data-client="muito-mais">
@@ -149,13 +158,16 @@
                              alt="E muito mais! 5" class="img-fluid client-img" data-client="muito-mais">
                         <img src="{{ url_for('static', filename='images/inicio6.jpeg') }}" 
                              alt="E muito mais! 6" class="img-fluid client-img" data-client="muito-mais">
+                        <button class="nav-arrow prev" onclick="navigateClientImage('muito-mais', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="nav-arrow next" onclick="navigateClientImage('muito-mais', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                     <div class="client-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                         <div class="text-center text-white">
                             <h4 class="fw-bold mb-3">{{ t('portfolio_and_more') }}</h4>
-                            <button class="btn btn-light btn-sm rounded-pill" onclick="switchClientImage('muito-mais')">
-                                <i class="fas fa-images me-1"></i>{{ t('portfolio_view_more') }}
-                            </button>
                         </div>
                     </div>
                     <div class="image-counter">

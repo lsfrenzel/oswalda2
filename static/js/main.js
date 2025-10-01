@@ -510,6 +510,47 @@ function switchClientImage(clientId) {
     }, 300);
 }
 
+// Navigate client images with direction control
+function navigateClientImage(clientId, direction) {
+    const container = document.querySelector(`[data-client="${clientId}"]`).closest('.client-card');
+    const images = container.querySelectorAll(`[data-client="${clientId}"]`);
+    const currentImageSpan = container.querySelector('.current-image');
+    
+    if (images.length <= 1) return;
+    
+    // Stop auto-switching temporarily
+    if (autoSwitchIntervals[clientId]) {
+        clearInterval(autoSwitchIntervals[clientId]);
+    }
+    
+    // Add switching animation
+    container.classList.add('switching');
+    
+    // Hide current image
+    images[clientImageIndexes[clientId]].classList.remove('active-img');
+    
+    // Calculate new index
+    clientImageIndexes[clientId] = (clientImageIndexes[clientId] + direction + images.length) % images.length;
+    
+    // Show new image with delay for smooth transition
+    setTimeout(() => {
+        images[clientImageIndexes[clientId]].classList.add('active-img');
+        if (currentImageSpan) {
+            currentImageSpan.textContent = clientImageIndexes[clientId] + 1;
+        }
+        container.classList.remove('switching');
+    }, 300);
+    
+    // Restart auto-switching after 5 seconds
+    setTimeout(() => {
+        if (images.length > 1) {
+            autoSwitchIntervals[clientId] = setInterval(() => {
+                switchClientImage(clientId);
+            }, 3000);
+        }
+    }, 5000);
+}
+
 // Initialize auto-cycling for all cards
 function startAutoSwitching() {
     const clientCards = document.querySelectorAll('.client-card');
