@@ -585,6 +585,15 @@ footer {
     overflow: hidden;
 }
 
+.footer-brand-text {
+    background: linear-gradient(135deg, #ffffff, #e0e0e0, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
 footer::before {
     content: '';
     position: absolute;
