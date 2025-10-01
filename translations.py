@@ -54,7 +54,7 @@ TRANSLATIONS = {
         'service4_item3': 'Conformidade regulatória',
         
         # Portfolio Page
-        'portfolio_title': 'Nosso Portfólio',
+        'portfolio_title': 'Nossos Parceiros',
         'portfolio_subtitle': 'Eventos de Sucesso',
         'portfolio_desc': 'Conheça alguns dos principais eventos e espetáculos que tivemos o prazer de apoiar com nossa expertise em logística circense.',
         
@@ -211,7 +211,7 @@ TRANSLATIONS = {
         'service4_item3': 'Regulatory compliance',
         
         # Portfolio Page
-        'portfolio_title': 'Our Portfolio',
+        'portfolio_title': 'Our Partners',
         'portfolio_subtitle': 'Successful Events',
         'portfolio_desc': 'Discover some of the main events and shows that we have had the pleasure of supporting with our expertise in circus logistics.',
         
@@ -356,7 +356,7 @@ TRANSLATIONS = {
         'service4_item3': 'Conformité réglementaire',
         
         # Portfolio Page
-        'portfolio_title': 'Notre Portfolio',
+        'portfolio_title': 'Nos Partenaires',
         'portfolio_subtitle': 'Événements Réussis',
         'portfolio_desc': 'Découvrez quelques-uns des principaux événements et spectacles que nous avons eu le plaisir de soutenir avec notre expertise en logistique de cirque.',
         
