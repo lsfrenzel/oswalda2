@@ -96,8 +96,8 @@ TRANSLATIONS = {
         'contact_whatsapp_label': 'WhatsApp',
         'contact_whatsapp_action': 'Conversar Agora',
         'contact_hours_label': 'Horário',
-        'contact_hours_weekdays': 'Segunda a Sexta: 8h às 18h',
-        'contact_hours_saturday': 'Sábado: 9h às 13h',
+        'contact_hours_weekdays': 'Segunda à Sexta, das 10h às 17h',
+        'contact_hours_saturday': '',
         'contact_placeholder': 'Conte-nos sobre seu projeto, suas necessidades específicas e como podemos ajudá-lo...',
         
         # Portfolio Page - Additional
@@ -253,8 +253,8 @@ TRANSLATIONS = {
         'contact_whatsapp_label': 'WhatsApp',
         'contact_whatsapp_action': 'Chat Now',
         'contact_hours_label': 'Hours',
-        'contact_hours_weekdays': 'Monday to Friday: 8am to 6pm',
-        'contact_hours_saturday': 'Saturday: 9am to 1pm',
+        'contact_hours_weekdays': 'Monday to Friday, 10am to 5pm',
+        'contact_hours_saturday': '',
         'contact_placeholder': 'Tell us about your project, your specific needs and how we can help you...',
         
         # Portfolio Page - Additional
@@ -398,8 +398,8 @@ TRANSLATIONS = {
         'contact_whatsapp_label': 'WhatsApp',
         'contact_whatsapp_action': 'Discuter Maintenant',
         'contact_hours_label': 'Horaires',
-        'contact_hours_weekdays': 'Lundi au Vendredi: 8h à 18h',
-        'contact_hours_saturday': 'Samedi: 9h à 13h',
+        'contact_hours_weekdays': 'Lundi au Vendredi, de 10h à 17h',
+        'contact_hours_saturday': '',
         'contact_placeholder': 'Parlez-nous de votre projet, de vos besoins spécifiques et de la façon dont nous pouvons vous aider...',
         
         # Portfolio Page - Additional
