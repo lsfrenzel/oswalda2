@@ -3,7 +3,7 @@
 {% block title %}{{ t('nav_services') }}{% endblock %}
 
 {% block content %}
-<div class="page-hero bg-danger text-white py-5 mt-5">
+<div class="page-hero text-white py-5 mt-5" style="background-color: #F32633;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -104,11 +104,11 @@
         
         <div class="row mt-5">
             <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="500">
-                <div class="bg-primary text-white rounded p-5 text-center">
+                <div class="text-white rounded p-5 text-center" style="background-color: #F32633;">
                     <h3 class="mb-4">{{ t('cta_project_title') }}</h3>
                     <p class="lead mb-4">{{ t('cta_project_subtitle') }}</p>
-                    <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg">
-                        <i class="fas fa-envelope me-2"></i>{{ t('contact_title') }}
+                    <a href="https://wa.me/15147938651?text={{ t('whatsapp_message') | urlencode }}" target="_blank" class="btn btn-light btn-lg">
+                        <i class="fab fa-whatsapp me-2"></i>{{ t('contact_title') }}
                     </a>
                 </div>
             </div>
