@@ -1148,7 +1148,7 @@ html {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 50%;
     transition: all 0.4s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -1487,6 +1487,7 @@ html {
     .team-photo img {
         width: 140px;
         height: 140px;
+        border-radius: 50%;
     }
     
     .client-card {
