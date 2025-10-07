@@ -65,6 +65,7 @@ body {
     transition: var(--hover-transition);
     position: relative;
     overflow: hidden;
+    color: #012398 !important;
 }
 
 .nav-link::before {
