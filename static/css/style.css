@@ -1881,3 +1881,17 @@ html {
         padding: 0.75rem 2rem !important;
     }
 }
+
+/* Language Selector Button */
+.btn-outline-secondary,
+.btn-outline-primary {
+    color: #012398 !important;
+    border-color: #012398 !important;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-primary:hover {
+    background-color: #012398 !important;
+    border-color: #012398 !important;
+    color: white !important;
+}
