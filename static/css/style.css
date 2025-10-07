@@ -1088,7 +1088,7 @@ html {
 .navbar-nav .nav-link {
     padding: 0.7rem 1.2rem;
     font-weight: 600;
-    color: var(--dark-color) !important;
+    color: #012398 !important;
     position: relative;
     margin: 0 0.2rem;
     border-radius: 8px;
@@ -1347,6 +1347,7 @@ html {
         font-weight: 500;
         margin: 0 0.75rem;
         padding: 0.75rem 1.25rem !important;
+        color: #012398 !important;
         transition: all 0.3s ease;
         position: relative;
         border-radius: 8px;
@@ -1428,6 +1429,7 @@ html {
         margin: 0.25rem 0;
         font-size: 1.1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        color: #012398 !important;
     }
     
     .navbar-nav .nav-link:last-child {
