@@ -23,8 +23,9 @@
         </div>
         
         <!-- Team Members -->
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-4 col-md-6">
+        <!-- Founder -->
+        <div class="row g-4 justify-content-center mb-4">
+            <div class="col-lg-6 col-md-8">
                 <div class="team-member text-center p-4 rounded shadow h-100">
                     <div class="team-photo mb-4">
                         <img src="{{ url_for('static', filename='images/louis_oswalda.jpeg') }}" 
@@ -35,12 +36,27 @@
                     <p class="small">{{ t('team_founder_desc') }}</p>
                 </div>
             </div>
+        </div>
+        
+        <!-- Other Team Members -->
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-member text-center p-4 rounded shadow h-100">
+                    <div class="team-photo mb-4">
+                        <img src="{{ url_for('static', filename='images/camila-dantas.png') }}" 
+                             alt="Camila Dantas" class="mx-auto d-block">
+                    </div>
+                    <h4 class="fw-bold text-primary mb-2">{{ t('team_media_name') }}</h4>
+                    <p class="text-muted mb-3">{{ t('team_media_title') }}</p>
+                    <p class="small">{{ t('team_media_desc') }}</p>
+                </div>
+            </div>
             
             <div class="col-lg-4 col-md-6">
                 <div class="team-member text-center p-4 rounded shadow h-100">
                     <div class="team-photo mb-4">
                         <img src="{{ url_for('static', filename='images/oswalda123.jpeg') }}" 
-                             alt="Equipe de Operações" class="mx-auto d-block">
+                             alt="Roberto de Jesus" class="mx-auto d-block">
                     </div>
                     <h4 class="fw-bold text-primary mb-2">{{ t('team_operations_name') }}</h4>
                     <p class="text-muted mb-3">{{ t('team_operations_title') }}</p>
@@ -52,7 +68,7 @@
                 <div class="team-member text-center p-4 rounded shadow h-100">
                     <div class="team-photo mb-4">
                         <img src="{{ url_for('static', filename='images/oswalda1234.jpeg') }}" 
-                             alt="Equipe de Segurança" class="mx-auto d-block">
+                             alt="Matthew Wilson" class="mx-auto d-block">
                     </div>
                     <h4 class="fw-bold text-primary mb-2">{{ t('team_safety_name') }}</h4>
                     <p class="text-muted mb-3">{{ t('team_safety_title') }}</p>
