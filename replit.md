@@ -42,7 +42,9 @@ Preferred communication style: Simple, everyday language.
 ### Security & Configuration
 - **Environment Variables**: Sensitive data stored in environment variables (database URL, email credentials, session secret)
 - **Proxy Support**: ProxyFix middleware for deployment behind reverse proxies
-- **Session Security**: Configurable session secret key with development fallback
+- **Session Security**: SESSION_SECRET required from environment (no fallback for production safety)
+- **Email Validation**: MAIL_USERNAME and MAIL_PASSWORD required at startup with fail-fast validation
+- **Database Setup**: Automatic db.create_all() for fast, reliable table creation on startup
 
 ## External Dependencies
 
@@ -54,8 +56,16 @@ Preferred communication style: Simple, everyday language.
 - **SMTP Email Service**: Gmail SMTP (configurable) for automated email notifications
 - **SQLite Database**: File-based database for development (production-ready with environment configuration)
 
-## Recent Updates (August 21, 2025)
+## Recent Updates
 
+### October 8, 2025 - Email & Database System
+- **Email System Fixed**: Implemented Gmail SMTP integration with Flask-Mail for automatic contact form notifications to suportemensagemcliente@gmail.com
+- **Startup Optimization**: Replaced complex migration system with fast db.create_all() to eliminate Railway timeout issues (reduced from 79s to <1s)
+- **Security Enhancements**: Added mandatory environment variable validation for SESSION_SECRET, MAIL_USERNAME, and MAIL_PASSWORD (fail-fast on missing credentials)
+- **Database Auto-Setup**: Automatic database table creation on startup for reliable deployment across environments
+- **Flask-Migrate Integration**: Kept available for manual schema migrations via CLI when needed
+
+### August 21, 2025 - Content & Branding
 - **Hero Section Redesign**: Updated hero messaging to "Coordenação e Gestão de Eventos Premium" with multilingual support, replaced hero video with new client-provided video
 - **Company Rebranding**: Updated experience from 15 to 40+ years, repositioned as Louis Leonard's company with North American/European market focus expanding to Latin America
 - **Navigation Enhancement**: Renamed "Portfólio" to "Nossos Clientes", added new "Nosso Time" (Our Team) page with complete translations
