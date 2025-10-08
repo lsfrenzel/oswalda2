@@ -150,7 +150,7 @@ TRANSLATIONS = {
         'team_media_desc': 'Auxilia no planejamento, negociação e execução de estratégias de compra de mídia em diversas plataformas para otimizar os investimentos em publicidade. Se concentra em canais de mídia digitais e tradicionais, trabalhando em estreita colaboração com compradores de mídia seniores e equipes de marketing.',
         'team_operations_name': 'Roberto de Jesus',
         'team_operations_title': 'Agente de Reservas',
-        'team_operations_desc': 'Roberto atua como Agente de Reservas, apoiando a equipe de reservas na garantia de apresentações em todos os mercados. Em sua função administrativa, cuida da programação, manutenção de registros e suporte geral para garantir o bom funcionamento da equipe.',
+        'team_operations_desc': 'Atua como Agente de Reservas, apoiando a equipe de reservas na garantia de apresentações em todos os mercados. Em sua função administrativa, cuida da programação, manutenção de registros e suporte geral para garantir o bom funcionamento da equipe.',
         'team_safety_name': 'Matthew Wilson',
         'team_safety_title': 'Agente de Reservas',
         'team_safety_desc': 'Apoia a equipe de reservas, ajudando a garantir e coordenar oportunidades de apresentações para nossos clientes. Auxilia com contratos e logística, trabalhando em estreita colaboração com agentes seniores para garantir uma comunicação fluida e um planejamento tranquilo do evento do início ao fim.',
