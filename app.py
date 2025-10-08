@@ -21,10 +21,20 @@ app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-prod
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 # Configure the database
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///oswalda.db")
+database_url = os.environ.get("DATABASE_URL", "sqlite:///oswalda.db")
+
+# Railway fix: PostgreSQL URLs starting with postgres:// need to be postgresql://
+if database_url.startswith("postgres://"):
+    database_url = database_url.replace("postgres://", "postgresql://", 1)
+    logging.info("Fixed PostgreSQL URL for SQLAlchemy compatibility")
+
+app.config["SQLALCHEMY_DATABASE_URI"] = database_url
 app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     "pool_recycle": 300,
     "pool_pre_ping": True,
+    "connect_args": {
+        "connect_timeout": 10
+    }
 }
 
 # Configure Flask-Mail
@@ -43,7 +53,13 @@ mail.init_app(app)
 with app.app_context():
     # Import models to ensure tables are created
     import models  # noqa: F401
-    db.create_all()
+    try:
+        logging.info("Creating database tables...")
+        db.create_all()
+        logging.info("Database tables created successfully")
+    except Exception as e:
+        logging.error(f"Error creating database tables: {str(e)}")
+        logging.warning("Application will continue, tables will be created on first request if needed")
 
 # Import routes after app is configured to avoid circular imports
 import routes  # noqa: F401

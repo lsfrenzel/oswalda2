@@ -123,6 +123,11 @@ def contact():
     
     return render_template('contact.html')
 
+@app.route('/health')
+def health_check():
+    """Health check endpoint for Railway and monitoring"""
+    return jsonify({'status': 'healthy', 'service': 'oswalda-website'}), 200
+
 @app.route('/test-email-config')
 def test_email_config():
     """Test route to check email configuration (for debugging)"""
