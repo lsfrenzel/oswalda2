@@ -62,35 +62,21 @@ app.config['MAIL_RECIPIENT'] = os.environ.get('MAIL_RECIPIENT', 'suportemensagem
 db.init_app(app)
 mail.init_app(app)
 
-# Import models BEFORE initializing migrations
+# Import models to ensure tables are created
 import models  # noqa: F401
 
-# Initialize Flask-Migrate for automatic database migrations
+# Initialize Flask-Migrate (optional, for manual migrations via CLI)
 migrate.init_app(app, db)
 
+# Simple and fast database setup
 with app.app_context():
-    migrations_dir = os.path.join(os.path.dirname(__file__), 'migrations')
-    
-    if not os.path.exists(migrations_dir):
-        # No migrations folder: use create_all() for initial setup
-        logging.info("No migrations folder found. Using db.create_all() for initial database setup")
-        try:
-            db.create_all()
-            logging.info("Database tables created successfully")
-        except Exception as e:
-            logging.error(f"Error creating database tables: {str(e)}")
-            raise
-    else:
-        # Migrations folder exists: run upgrade
-        logging.info("Running database migrations...")
-        from flask_migrate import upgrade
-        try:
-            upgrade()
-            logging.info("Database migrations applied successfully")
-        except Exception as e:
-            logging.error(f"Migration failed: {str(e)}")
-            logging.warning("Falling back to db.create_all()")
-            db.create_all()
+    try:
+        logging.info("Setting up database tables...")
+        db.create_all()
+        logging.info("Database tables ready")
+    except Exception as e:
+        logging.error(f"Error setting up database: {str(e)}")
+        raise
 
 # Import routes after app is configured to avoid circular imports
 import routes  # noqa: F401
