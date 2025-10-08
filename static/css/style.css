@@ -1158,6 +1158,11 @@ html {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
+/* Ajuste específico para a imagem da Camila (mediabuyerblue.png) */
+.team-photo img[src*="mediabuyerblue.png"] {
+    object-position: center 30%;
+}
+
 .team-member {
     transition: all 0.3s ease;
     border: 1px solid rgba(1, 35, 152, 0.1);
