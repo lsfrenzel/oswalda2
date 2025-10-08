@@ -20,10 +20,11 @@ migrate = Migrate()
 # Create the app
 app = Flask(__name__)
 
-# Require SESSION_SECRET from environment
-if not os.environ.get("SESSION_SECRET"):
-    raise RuntimeError("SESSION_SECRET environment variable must be set")
+# Configure session secret
 app.secret_key = os.environ.get("SESSION_SECRET")
+if not app.secret_key:
+    logging.warning("SESSION_SECRET not set - using development secret (NOT secure for production)")
+    app.secret_key = "dev-secret-key-change-in-production"
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 # Configure the database
@@ -43,25 +44,25 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     }
 }
 
-# Configure Flask-Mail with validation
+# Configure Flask-Mail (optional - only required for contact form)
 mail_username = os.environ.get('MAIL_USERNAME')
 mail_password = os.environ.get('MAIL_PASSWORD')
 
-if not mail_username or not mail_password:
-    raise RuntimeError("MAIL_USERNAME and MAIL_PASSWORD environment variables must be set")
-
-app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
-app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', '587'))
-app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1']
-app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = mail_username
-app.config['MAIL_PASSWORD'] = mail_password
-app.config['MAIL_DEFAULT_SENDER'] = mail_username
-app.config['MAIL_RECIPIENT'] = os.environ.get('MAIL_RECIPIENT', 'suportemensagemcliente@gmail.com')
-app.config['MAIL_MAX_EMAILS'] = None
-app.config['MAIL_ASCII_ATTACHMENTS'] = False
-# Add connection timeout to prevent hanging
-app.config['MAIL_TIMEOUT'] = 10  # 10 seconds timeout for SMTP connection
+if mail_username and mail_password:
+    app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
+    app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', '587'))
+    app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1']
+    app.config['MAIL_USE_SSL'] = False
+    app.config['MAIL_USERNAME'] = mail_username
+    app.config['MAIL_PASSWORD'] = mail_password
+    app.config['MAIL_DEFAULT_SENDER'] = mail_username
+    app.config['MAIL_RECIPIENT'] = os.environ.get('MAIL_RECIPIENT', 'suportemensagemcliente@gmail.com')
+    app.config['MAIL_MAX_EMAILS'] = None
+    app.config['MAIL_ASCII_ATTACHMENTS'] = False
+    app.config['MAIL_TIMEOUT'] = 10
+    logging.info("Email configuration loaded successfully")
+else:
+    logging.warning("Email not configured - contact form will not work until MAIL_USERNAME and MAIL_PASSWORD are set")
 
 # Initialize extensions
 db.init_app(app)
