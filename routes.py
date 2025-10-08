@@ -83,9 +83,9 @@ def contact():
                 try:
                     resend.api_key = os.environ.get("RESEND_API_KEY")
                     
-                    params = {
-                        "from": "Oswalda Produções <onboarding@resend.dev>",
-                        "to": ["suportemensagemcliente@gmail.com"],
+                    r = resend.Emails.send({
+                        "from": "onboarding@resend.dev",
+                        "to": "suportemensagemcliente@gmail.com",
                         "subject": f"Novo Contato - {name}",
                         "html": f"""
                         <h2>Novo contato recebido através do site Oswalda Produções</h2>
@@ -101,10 +101,9 @@ def contact():
                         <hr>
                         <p><small>Este email foi enviado automaticamente pelo formulário de contato do site.</small></p>
                         """
-                    }
+                    })
                     
-                    response = resend.Emails.send(params)
-                    logging.info(f"✓ Email sent successfully via Resend for new lead: {response}")
+                    logging.info(f"✓ Email sent successfully via Resend: {r}")
                 except Exception as e:
                     logging.error(f"✗ Failed to send email via Resend: {str(e)}")
             
@@ -143,19 +142,17 @@ def test_resend():
                 'api_key_present': False
             }), 500
         
-        params = {
-            "from": "Oswalda Produções <onboarding@resend.dev>",
-            "to": ["suportemensagemcliente@gmail.com"],
+        r = resend.Emails.send({
+            "from": "onboarding@resend.dev",
+            "to": "suportemensagemcliente@gmail.com",
             "subject": "Teste de Configuração Resend",
             "html": "<h2>Email de teste</h2><p>Se você recebeu este email, o Resend está configurado corretamente!</p>"
-        }
-        
-        response = resend.Emails.send(params)
+        })
         
         return jsonify({
             'status': 'success',
             'message': 'Test email sent successfully',
-            'response': str(response),
+            'response': str(r),
             'api_key_present': True
         }), 200
         
