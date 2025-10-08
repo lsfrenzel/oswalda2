@@ -3,6 +3,7 @@ import logging
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
+from flask_migrate import Migrate
 from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -14,10 +15,15 @@ class Base(DeclarativeBase):
 
 db = SQLAlchemy(model_class=Base)
 mail = Mail()
+migrate = Migrate()
 
 # Create the app
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
+
+# Require SESSION_SECRET from environment
+if not os.environ.get("SESSION_SECRET"):
+    raise RuntimeError("SESSION_SECRET environment variable must be set")
+app.secret_key = os.environ.get("SESSION_SECRET")
 app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 # Configure the database
@@ -37,29 +43,54 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     }
 }
 
-# Configure Flask-Mail
+# Configure Flask-Mail with validation
+mail_username = os.environ.get('MAIL_USERNAME')
+mail_password = os.environ.get('MAIL_PASSWORD')
+
+if not mail_username or not mail_password:
+    raise RuntimeError("MAIL_USERNAME and MAIL_PASSWORD environment variables must be set")
+
 app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
 app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', '587'))
 app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1']
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', '')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', '')
-app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME', 'suportemensagemcliente@gmail.com')
+app.config['MAIL_USERNAME'] = mail_username
+app.config['MAIL_PASSWORD'] = mail_password
+app.config['MAIL_DEFAULT_SENDER'] = mail_username
 app.config['MAIL_RECIPIENT'] = os.environ.get('MAIL_RECIPIENT', 'suportemensagemcliente@gmail.com')
 
 # Initialize extensions
 db.init_app(app)
 mail.init_app(app)
 
+# Import models BEFORE initializing migrations
+import models  # noqa: F401
+
+# Initialize Flask-Migrate for automatic database migrations
+migrate.init_app(app, db)
+
 with app.app_context():
-    # Import models to ensure tables are created
-    import models  # noqa: F401
-    try:
-        logging.info("Creating database tables...")
-        db.create_all()
-        logging.info("Database tables created successfully")
-    except Exception as e:
-        logging.error(f"Error creating database tables: {str(e)}")
-        logging.warning("Application will continue, tables will be created on first request if needed")
+    migrations_dir = os.path.join(os.path.dirname(__file__), 'migrations')
+    
+    if not os.path.exists(migrations_dir):
+        # No migrations folder: use create_all() for initial setup
+        logging.info("No migrations folder found. Using db.create_all() for initial database setup")
+        try:
+            db.create_all()
+            logging.info("Database tables created successfully")
+        except Exception as e:
+            logging.error(f"Error creating database tables: {str(e)}")
+            raise
+    else:
+        # Migrations folder exists: run upgrade
+        logging.info("Running database migrations...")
+        from flask_migrate import upgrade
+        try:
+            upgrade()
+            logging.info("Database migrations applied successfully")
+        except Exception as e:
+            logging.error(f"Migration failed: {str(e)}")
+            logging.warning("Falling back to db.create_all()")
+            db.create_all()
 
 # Import routes after app is configured to avoid circular imports
 import routes  # noqa: F401
