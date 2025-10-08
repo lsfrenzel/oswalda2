@@ -129,3 +129,39 @@ def contact():
 def health_check():
     """Health check endpoint for Railway and monitoring"""
     return jsonify({'status': 'healthy', 'service': 'oswalda-website'}), 200
+
+@app.route('/test-resend')
+def test_resend():
+    """Test Resend configuration and send test email"""
+    try:
+        resend.api_key = os.environ.get("RESEND_API_KEY")
+        
+        if not resend.api_key:
+            return jsonify({
+                'status': 'error',
+                'message': 'RESEND_API_KEY not configured',
+                'api_key_present': False
+            }), 500
+        
+        params = {
+            "from": "Oswalda Produções <onboarding@resend.dev>",
+            "to": ["suportemensagemcliente@gmail.com"],
+            "subject": "Teste de Configuração Resend",
+            "html": "<h2>Email de teste</h2><p>Se você recebeu este email, o Resend está configurado corretamente!</p>"
+        }
+        
+        response = resend.Emails.send(params)
+        
+        return jsonify({
+            'status': 'success',
+            'message': 'Test email sent successfully',
+            'response': str(response),
+            'api_key_present': True
+        }), 200
+        
+    except Exception as e:
+        return jsonify({
+            'status': 'error',
+            'message': str(e),
+            'api_key_present': bool(os.environ.get("RESEND_API_KEY"))
+        }), 500
