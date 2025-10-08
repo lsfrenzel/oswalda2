@@ -79,3 +79,4 @@ gunicorn
 psycopg2-binary
 sqlalchemy
 werkzeug
+flask-migrate
