@@ -1,10 +1,10 @@
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
-from flask_mail import Message
-from app import app, db, mail
+from app import app, db
 from models import Lead
 from translations import get_translation
 import logging
 import os
+import resend
 
 @app.context_processor
 def inject_translation():
@@ -78,39 +78,42 @@ def contact():
             db.session.add(lead)
             db.session.commit()
             
-            # Send email notification in background to avoid blocking
+            # Send email notification using Resend API
             def send_email_async():
                 try:
-                    msg = Message(
-                        subject=f'Novo Contato - {name}',
-                        recipients=[app.config['MAIL_RECIPIENT']],
-                        body=f"""
-                        Novo contato recebido através do site Oswalda Produções:
+                    resend.api_key = os.environ.get("RESEND_API_KEY")
+                    
+                    params = {
+                        "from": "Oswalda Produções <onboarding@resend.dev>",
+                        "to": ["suportemensagemcliente@gmail.com"],
+                        "subject": f"Novo Contato - {name}",
+                        "html": f"""
+                        <h2>Novo contato recebido através do site Oswalda Produções</h2>
                         
-                        Nome: {name}
-                        E-mail: {email}
-                        Telefone: {phone if phone else 'Não informado'}
-                        Idioma: {language}
+                        <p><strong>Nome:</strong> {name}</p>
+                        <p><strong>E-mail:</strong> {email}</p>
+                        <p><strong>Telefone:</strong> {phone if phone else 'Não informado'}</p>
+                        <p><strong>Idioma:</strong> {language}</p>
                         
-                        Mensagem:
-                        {message}
+                        <h3>Mensagem:</h3>
+                        <p>{message}</p>
                         
-                        ---
-                        Este email foi enviado automaticamente pelo formulário de contato do site.
-                        """,
-                        sender=app.config['MAIL_DEFAULT_SENDER']
-                    )
-                    mail.send(msg)
-                    logging.info(f"✓ Email sent successfully for new lead: {email}")
+                        <hr>
+                        <p><small>Este email foi enviado automaticamente pelo formulário de contato do site.</small></p>
+                        """
+                    }
+                    
+                    response = resend.Emails.send(params)
+                    logging.info(f"✓ Email sent successfully via Resend for new lead: {response}")
                 except Exception as e:
-                    logging.error(f"✗ Failed to send email: {str(e)}")
+                    logging.error(f"✗ Failed to send email via Resend: {str(e)}")
             
             # Send email in background thread
             import threading
             email_thread = threading.Thread(target=send_email_async)
             email_thread.daemon = True
             email_thread.start()
-            logging.info(f"Email being sent in background to: {app.config['MAIL_RECIPIENT']}")
+            logging.info("Email being sent in background to: suportemensagemcliente@gmail.com")
             
             flash(get_translation('contact_success', language), 'success')
             return redirect(url_for('contact'))
@@ -126,21 +129,3 @@ def contact():
 def health_check():
     """Health check endpoint for Railway and monitoring"""
     return jsonify({'status': 'healthy', 'service': 'oswalda-website'}), 200
-
-@app.route('/test-email-config')
-def test_email_config():
-    """Test route to check email configuration (for debugging)"""
-    config_check = {
-        'MAIL_SERVER': app.config.get('MAIL_SERVER'),
-        'MAIL_PORT': app.config.get('MAIL_PORT'),
-        'MAIL_USE_TLS': app.config.get('MAIL_USE_TLS'),
-        'MAIL_USERNAME': 'Configured' if app.config.get('MAIL_USERNAME') else 'NOT CONFIGURED',
-        'MAIL_PASSWORD': 'Configured' if app.config.get('MAIL_PASSWORD') else 'NOT CONFIGURED',
-        'MAIL_DEFAULT_SENDER': app.config.get('MAIL_DEFAULT_SENDER'),
-        'MAIL_RECIPIENT': app.config.get('MAIL_RECIPIENT'),
-        'environment_variables': {
-            'MAIL_USERNAME': 'Set' if os.environ.get('MAIL_USERNAME') else 'NOT SET',
-            'MAIL_PASSWORD': 'Set' if os.environ.get('MAIL_PASSWORD') else 'NOT SET'
-        }
-    }
-    return jsonify(config_check)

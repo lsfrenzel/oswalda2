@@ -2,7 +2,6 @@ import os
 import logging
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_mail import Mail
 from flask_migrate import Migrate
 from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
@@ -14,7 +13,6 @@ class Base(DeclarativeBase):
     pass
 
 db = SQLAlchemy(model_class=Base)
-mail = Mail()
 migrate = Migrate()
 
 # Create the app
@@ -44,29 +42,11 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     }
 }
 
-# Configure Flask-Mail (optional - only required for contact form)
-mail_username = os.environ.get('MAIL_USERNAME')
-mail_password = os.environ.get('MAIL_PASSWORD')
-
-if mail_username and mail_password:
-    app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')
-    app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', '587'))
-    app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1']
-    app.config['MAIL_USE_SSL'] = False
-    app.config['MAIL_USERNAME'] = mail_username
-    app.config['MAIL_PASSWORD'] = mail_password
-    app.config['MAIL_DEFAULT_SENDER'] = mail_username
-    app.config['MAIL_RECIPIENT'] = os.environ.get('MAIL_RECIPIENT', 'suportemensagemcliente@gmail.com')
-    app.config['MAIL_MAX_EMAILS'] = None
-    app.config['MAIL_ASCII_ATTACHMENTS'] = False
-    app.config['MAIL_TIMEOUT'] = 10
-    logging.info("Email configuration loaded successfully")
-else:
-    logging.warning("Email not configured - contact form will not work until MAIL_USERNAME and MAIL_PASSWORD are set")
+# Email now handled by Resend API (see routes.py)
+logging.info("Email configured via Resend API")
 
 # Initialize extensions
 db.init_app(app)
-mail.init_app(app)
 
 # Import models to ensure tables are created
 import models  # noqa: F401
