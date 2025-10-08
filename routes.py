@@ -81,17 +81,20 @@ def contact():
             try:
                 msg = Message(
                     subject=f'Novo Contato - {name}',
-                    recipients=[app.config['MAIL_DEFAULT_SENDER']],
+                    recipients=[app.config['MAIL_RECIPIENT']],
                     body=f"""
-                    Novo contato recebido através do site:
+                    Novo contato recebido através do site Oswalda Produções:
                     
                     Nome: {name}
                     E-mail: {email}
-                    Telefone: {phone}
+                    Telefone: {phone if phone else 'Não informado'}
                     Idioma: {language}
                     
                     Mensagem:
                     {message}
+                    
+                    ---
+                    Este email foi enviado automaticamente pelo formulário de contato do site.
                     """,
                     sender=app.config['MAIL_DEFAULT_SENDER']
                 )
