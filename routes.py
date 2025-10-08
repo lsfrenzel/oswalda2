@@ -78,40 +78,39 @@ def contact():
             db.session.add(lead)
             db.session.commit()
             
-            # Send email notification
-            try:
-                logging.info(f"Attempting to send email to: {app.config['MAIL_RECIPIENT']}")
-                logging.info(f"Using sender: {app.config['MAIL_DEFAULT_SENDER']}")
-                logging.info(f"MAIL_USERNAME configured: {'Yes' if app.config['MAIL_USERNAME'] else 'No'}")
-                logging.info(f"MAIL_PASSWORD configured: {'Yes' if app.config['MAIL_PASSWORD'] else 'No'}")
-                
-                msg = Message(
-                    subject=f'Novo Contato - {name}',
-                    recipients=[app.config['MAIL_RECIPIENT']],
-                    body=f"""
-                    Novo contato recebido através do site Oswalda Produções:
-                    
-                    Nome: {name}
-                    E-mail: {email}
-                    Telefone: {phone if phone else 'Não informado'}
-                    Idioma: {language}
-                    
-                    Mensagem:
-                    {message}
-                    
-                    ---
-                    Este email foi enviado automaticamente pelo formulário de contato do site.
-                    """,
-                    sender=app.config['MAIL_DEFAULT_SENDER']
-                )
-                mail.send(msg)
-                logging.info(f"✓ Email sent successfully for new lead: {email}")
-            except Exception as e:
-                logging.error(f"✗ Failed to send email: {str(e)}")
-                logging.error(f"Error type: {type(e).__name__}")
-                import traceback
-                logging.error(f"Traceback: {traceback.format_exc()}")
-                # Continue even if email fails
+            # Send email notification in background to avoid blocking
+            def send_email_async():
+                try:
+                    msg = Message(
+                        subject=f'Novo Contato - {name}',
+                        recipients=[app.config['MAIL_RECIPIENT']],
+                        body=f"""
+                        Novo contato recebido através do site Oswalda Produções:
+                        
+                        Nome: {name}
+                        E-mail: {email}
+                        Telefone: {phone if phone else 'Não informado'}
+                        Idioma: {language}
+                        
+                        Mensagem:
+                        {message}
+                        
+                        ---
+                        Este email foi enviado automaticamente pelo formulário de contato do site.
+                        """,
+                        sender=app.config['MAIL_DEFAULT_SENDER']
+                    )
+                    mail.send(msg)
+                    logging.info(f"✓ Email sent successfully for new lead: {email}")
+                except Exception as e:
+                    logging.error(f"✗ Failed to send email: {str(e)}")
+            
+            # Send email in background thread
+            import threading
+            email_thread = threading.Thread(target=send_email_async)
+            email_thread.daemon = True
+            email_thread.start()
+            logging.info(f"Email being sent in background to: {app.config['MAIL_RECIPIENT']}")
             
             flash(get_translation('contact_success', language), 'success')
             return redirect(url_for('contact'))
