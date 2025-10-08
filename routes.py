@@ -1,9 +1,10 @@
-from flask import render_template, request, redirect, url_for, flash, session
+from flask import render_template, request, redirect, url_for, flash, session, jsonify
 from flask_mail import Message
 from app import app, db, mail
 from models import Lead
 from translations import get_translation
 import logging
+import os
 
 @app.context_processor
 def inject_translation():
@@ -79,6 +80,11 @@ def contact():
             
             # Send email notification
             try:
+                logging.info(f"Attempting to send email to: {app.config['MAIL_RECIPIENT']}")
+                logging.info(f"Using sender: {app.config['MAIL_DEFAULT_SENDER']}")
+                logging.info(f"MAIL_USERNAME configured: {'Yes' if app.config['MAIL_USERNAME'] else 'No'}")
+                logging.info(f"MAIL_PASSWORD configured: {'Yes' if app.config['MAIL_PASSWORD'] else 'No'}")
+                
                 msg = Message(
                     subject=f'Novo Contato - {name}',
                     recipients=[app.config['MAIL_RECIPIENT']],
@@ -99,9 +105,12 @@ def contact():
                     sender=app.config['MAIL_DEFAULT_SENDER']
                 )
                 mail.send(msg)
-                logging.info(f"Email sent for new lead: {email}")
+                logging.info(f"✓ Email sent successfully for new lead: {email}")
             except Exception as e:
-                logging.error(f"Failed to send email: {str(e)}")
+                logging.error(f"✗ Failed to send email: {str(e)}")
+                logging.error(f"Error type: {type(e).__name__}")
+                import traceback
+                logging.error(f"Traceback: {traceback.format_exc()}")
                 # Continue even if email fails
             
             flash(get_translation('contact_success', language), 'success')
@@ -113,3 +122,21 @@ def contact():
             flash(get_translation('contact_error', session.get('language', 'pt')), 'error')
     
     return render_template('contact.html')
+
+@app.route('/test-email-config')
+def test_email_config():
+    """Test route to check email configuration (for debugging)"""
+    config_check = {
+        'MAIL_SERVER': app.config.get('MAIL_SERVER'),
+        'MAIL_PORT': app.config.get('MAIL_PORT'),
+        'MAIL_USE_TLS': app.config.get('MAIL_USE_TLS'),
+        'MAIL_USERNAME': 'Configured' if app.config.get('MAIL_USERNAME') else 'NOT CONFIGURED',
+        'MAIL_PASSWORD': 'Configured' if app.config.get('MAIL_PASSWORD') else 'NOT CONFIGURED',
+        'MAIL_DEFAULT_SENDER': app.config.get('MAIL_DEFAULT_SENDER'),
+        'MAIL_RECIPIENT': app.config.get('MAIL_RECIPIENT'),
+        'environment_variables': {
+            'MAIL_USERNAME': 'Set' if os.environ.get('MAIL_USERNAME') else 'NOT SET',
+            'MAIL_PASSWORD': 'Set' if os.environ.get('MAIL_PASSWORD') else 'NOT SET'
+        }
+    }
+    return jsonify(config_check)
