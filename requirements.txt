@@ -7,3 +7,17 @@ sqlalchemy
 werkzeug
 flask-migrate
 resend
+email_validator
+flask
+flask-sqlalchemy
+gunicorn
+psycopg2-binary
+email-validator
+Flask==2.3.3
+flask-migrate
+flask-sqlalchemy
+gunicorn==21.2.0
+psycopg2-binary
+resend
+sqlalchemy
+werkzeug
