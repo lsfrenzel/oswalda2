@@ -72,8 +72,7 @@ TRANSLATIONS = {
         # Footer
         'footer_contact': 'Contato',
         'footer_email': 'louis.leonard1313@gmail.com',
-        'footer_phone': '+55 (11) 9999-9999',
-        'footer_phone': '+1 (514) 793-8651',
+        'footer_phone': '+55 (11) 96330-9107',
         'footer_follow': 'Siga-nos',
         'footer_rights': 'Todos os direitos reservados.',
         
@@ -232,8 +231,7 @@ TRANSLATIONS = {
         # Footer
         'footer_contact': 'Contact',
         'footer_email': 'louis.leonard1313@gmail.com',
-        'footer_phone': '+55 (11) 9999-9999',
-        'footer_phone': '+1 (514) 793-8651',
+        'footer_phone': '+55 (11) 96330-9107',
         'footer_follow': 'Follow us',
         'footer_rights': 'All rights reserved.',
         
@@ -380,8 +378,7 @@ TRANSLATIONS = {
         # Footer
         'footer_contact': 'Contact',
         'footer_email': 'louis.leonard1313@gmail.com',
-        'footer_phone': '+55 (11) 9999-9999',
-        'footer_phone': '+1 (514) 793-8651',
+        'footer_phone': '+55 (11) 96330-9107',
         'footer_follow': 'Suivez-nous',
         'footer_rights': 'Tous droits réservés.',
         
