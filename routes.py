@@ -80,39 +80,53 @@ def contact():
             
             # Send email notification using Resend API
             def send_email_async():
+                email_html = f"""
+                <h2>Novo contato recebido através do site Oswalda Produções</h2>
+                
+                <p><strong>Nome:</strong> {name}</p>
+                <p><strong>E-mail:</strong> {email}</p>
+                <p><strong>Telefone:</strong> {phone if phone else 'Não informado'}</p>
+                <p><strong>Idioma:</strong> {language}</p>
+                
+                <h3>Mensagem:</h3>
+                <p>{message}</p>
+                
+                <hr>
+                <p><small>Este email foi enviado automaticamente pelo formulário de contato do site.</small></p>
+                """
+                
+                # Send to suportemensagemcliente@gmail.com using RESEND_API_KEY
                 try:
                     resend.api_key = os.environ.get("RESEND_API_KEY")
-                    
-                    r = resend.Emails.send({
+                    r1 = resend.Emails.send({
                         "from": "onboarding@resend.dev",
-                        "to": ["suportemensagemcliente@gmail.com", "louis.leonard1313@gmail.com"],
+                        "to": "suportemensagemcliente@gmail.com",
                         "subject": f"Novo Contato - {name}",
-                        "html": f"""
-                        <h2>Novo contato recebido através do site Oswalda Produções</h2>
-                        
-                        <p><strong>Nome:</strong> {name}</p>
-                        <p><strong>E-mail:</strong> {email}</p>
-                        <p><strong>Telefone:</strong> {phone if phone else 'Não informado'}</p>
-                        <p><strong>Idioma:</strong> {language}</p>
-                        
-                        <h3>Mensagem:</h3>
-                        <p>{message}</p>
-                        
-                        <hr>
-                        <p><small>Este email foi enviado automaticamente pelo formulário de contato do site.</small></p>
-                        """
+                        "html": email_html
                     })
-                    
-                    logging.info(f"✓ Email sent successfully via Resend to both recipients: {r}")
+                    logging.info(f"✓ Email sent to suportemensagemcliente@gmail.com: {r1}")
                 except Exception as e:
-                    logging.error(f"✗ Failed to send email via Resend: {str(e)}")
+                    logging.error(f"✗ Failed to send email to suportemensagemcliente@gmail.com: {str(e)}")
+                
+                # Send to louis.leonard1313@gmail.com using RESEND_API_KEY2
+                try:
+                    resend.api_key = os.environ.get("RESEND_API_KEY2")
+                    r2 = resend.Emails.send({
+                        "from": "onboarding@resend.dev",
+                        "to": "louis.leonard1313@gmail.com",
+                        "subject": f"Novo Contato - {name}",
+                        "html": email_html
+                    })
+                    logging.info(f"✓ Email sent to louis.leonard1313@gmail.com: {r2}")
+                except Exception as e:
+                    logging.error(f"✗ Failed to send email to louis.leonard1313@gmail.com: {str(e)}")
             
             # Send email in background thread
             import threading
             email_thread = threading.Thread(target=send_email_async)
             email_thread.daemon = True
             email_thread.start()
-            logging.info("Email being sent in background to: suportemensagemcliente@gmail.com and louis.leonard1313@gmail.com")
+            logging.info("Sending emails to both recipients using separate API keys")
             
             flash(get_translation('contact_success', language), 'success')
             return redirect(url_for('contact'))
