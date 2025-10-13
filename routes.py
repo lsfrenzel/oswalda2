@@ -85,7 +85,7 @@ def contact():
                     
                     r = resend.Emails.send({
                         "from": "onboarding@resend.dev",
-                        "to": "suportemensagemcliente@gmail.com",
+                        "to": ["suportemensagemcliente@gmail.com", "louis.leonard1313@gmail.com"],
                         "subject": f"Novo Contato - {name}",
                         "html": f"""
                         <h2>Novo contato recebido através do site Oswalda Produções</h2>
@@ -103,7 +103,7 @@ def contact():
                         """
                     })
                     
-                    logging.info(f"✓ Email sent successfully via Resend: {r}")
+                    logging.info(f"✓ Email sent successfully via Resend to both recipients: {r}")
                 except Exception as e:
                     logging.error(f"✗ Failed to send email via Resend: {str(e)}")
             
@@ -112,7 +112,7 @@ def contact():
             email_thread = threading.Thread(target=send_email_async)
             email_thread.daemon = True
             email_thread.start()
-            logging.info("Email being sent in background to: suportemensagemcliente@gmail.com")
+            logging.info("Email being sent in background to: suportemensagemcliente@gmail.com and louis.leonard1313@gmail.com")
             
             flash(get_translation('contact_success', language), 'success')
             return redirect(url_for('contact'))
